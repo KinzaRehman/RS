@@ -1,0 +1,110 @@
+/*philly ressturant:NYC - Georgia */
+
+/*
+Boston, Philly, Maine - Arial
+NYC - Georgia
+Maine Shack - 'Lilita One' & 'Nunito Sans'
+Philly Water Ice - Titan One & Nunito
+*/
+*{
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+body > header {
+    width: 100%;
+    border: 5px solid rgb(168, 59, 59); 
+    color: whitesmoke;
+    height: 100px;
+    background-color: rgb(168, 59, 59);
+    overflow: auto;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+}
+body > header > h1 +h3 {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+nav ul {
+    list-style:none;
+    margin: 0;
+    padding:0;
+    align-items: center;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav li:last-child{
+    margin-right: 0;
+}
+
+nav a{
+    color: rgb(236, 232, 232);
+    text-decoration: none;
+}
+
+body > header + section {
+    height: 25px;
+    background-color: green;
+    text-align: center;
+    color: whitesmoke;
+    border: 5px solid green;
+    font-weight: bold;
+}
+
+body > section , section img {
+    width: 100%;
+}
+
+body, .main {
+    text-align: center;
+    background-color: rgb(243, 235, 224);
+    display:flex;
+    flex-wrap: wrap;
+
+}
+
+.main > h2 {
+    width: 100%;
+    color: darkred;
+    font-size: 30px;
+    margin-bottom: 35px;
+}
+
+section.menu1, section.menu2 {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+
+section.menu1 h3, section.menu2 h3 {
+    color: green;
+    border-bottom: 2px darkred dashed ;
+}
+
+h3 + ul li {
+    text-align: left;
+    list-style: none;
+}
+
+
+footer {
+    width: 100%;
+    border: 3px solid rgb(80, 49, 49);
+    color: blanchedalmond;
+    height: 100px;
+    background-color: rgb(80, 49, 49);
+    overflow: auto;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+}
