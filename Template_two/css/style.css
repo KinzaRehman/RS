@@ -1,0 +1,154 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+ok
+
+
+/******************************************
+/* LAYOUT covers westies like on a computer/ laptop
+/*******************************************/
+main, .bottom{
+     display: flex; 
+}
+header, footer { 
+     background-color: brown;
+     border: 2px solid pink;
+}
+
+main, .bottom{
+     display: flex; 
+     flex: 1;
+     height: 100px;;
+}
+
+main > section:first-child {
+     flex: 0 0 80%;
+}
+main > section:last-child {
+     flex: 0 0 20%;
+}
+
+section{
+     flex:1;
+     height: 100px;
+     border: 1px solid black;
+     background: beige;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style:none;
+    margin: 0;
+    padding:0;
+}
+
+nav li {
+    margin-right: 20px;
+    border: 2px solid black;
+    padding: 5px;
+}
+
+nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+
+
+/******************************************
+/* ADDITIONAL STYLES for tablets
+/*******************************************/
+@media screen and (max-width: 768px) {
+     header, footer { 
+          background-color: rgb(42, 165, 63);
+          border: 2px solid rgb(255, 233, 192);
+     }
+     
+     main, .bottom{
+          display: flex; 
+          flex: 1;
+          height: 100px;;
+     }
+
+  
+
+     main > section:first-child, 
+     main > section:last-child  {
+          flex: 0 0 50%;
+          height: 100px;
+          background: rgb(170, 75, 30);
+     }
+
+     .bottom > section {
+          flex: 1;
+          height: 100px;
+          background: pink;
+     }
+
+     section {
+          text-align: center; 
+          justify-content: center;
+          flex: center;
+     }
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES phones
+/*******************************************/
+@media screen and (max-width: 480px) {
+
+     main, .bottom {
+          flex-direction: column;
+          height: 100px;
+     }
+
+     main > section, .bottom > section {
+          width: 100%; 
+          background: yellow;
+          }
+
+     nav ul {
+          flex-direction: column;
+          width: 100%;
+     }
+
+     nav li { 
+          width: 100%; 
+          margin-right: 0; 
+          text-align: center;
+     }
+     nav a {
+          padding: 5px slod pink;
+          background: lightpink;
+          border: 2px solid red;
+
+     }
+
+    
+}
+
