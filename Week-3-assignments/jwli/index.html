@@ -10,20 +10,22 @@
 
 <body>
     <!-- Header with navigation and a button-->
+
     <header>
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Program</a></li>
-                <li><a href="#">JWLIA</a></li>
+                <li class="name"><a href="#">JWLIA</a></li>
                 <li><a href="#">Fellows</a></li>
                 <li><a href="#">News</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#">日本語</a></li>
+                <li class="jap"><a href="#">日本語</a></li>
             </ul>
             <a href="#" class="apply-button">Apply</a>
         </nav>
     </header>
+    <section id="small"> Your screen size is not compatiable</section> 
 
     <!-- main section, 2 images an h1 a p a forumn email box and button and another p-->
     <main>
@@ -40,7 +42,7 @@
                 </form>
             </section>
 
-            <img class="main-img" src="photos\jwila-main.png" alt="Illustration of a woman leader">
+            <img class="main-img remove-scrren" src="photos\jwila-main.png" alt="Illustration of a woman leader">
         </section>
     </main>
     <!-- section one has like an h2 with two sections each section has a strong on part of its text. then like a p on the bottom-->
@@ -64,8 +66,8 @@
     </section>
 
     <!--section two has an article with two figures and figure captions-->
-    <section class="two"> 
-        <article>
+    <section class="two"> <!-- control this whole thing as a flex-->
+        <section>
             <h2>Our History</h2>
             <p>The Japanese Women's Leadership Initiative (JWLI) was founded in 2006 by three visionary women in Boston, Massachusetts: Atsuko Toko Fish, Mary Lassen, and Catherine Crone Coburn. JWLI brings emerging women leaders, referred to as the Fellows, from Japan to Boston to receive four weeks of hands-on experience and training with successful nonprofit organizations in nonprofit management and leadership development. During their stay in Boston, the Fellows will develop an Action Plan, which will serve as a step-by-step roadmap to make their dreams of social change a reality. After returning to Japan, the Fellows are expected to make a difference in their communities based on their Action Plans. The purpose of this program is for the fellows to share the knowledge and experience they acquired in Boston with other women and social sector leaders wihin Japan.
             </p>
@@ -73,7 +75,7 @@
             </p>
             <p>In 2010, thanks to the generous funding provided by the U.S. -Japan Foundation, JWLI expanded its vision to hold public forums within Japan. Held in 2010, 2012 and 2013, these public forums provided information about the nonprofit sector and the American approach to philanthropy with hopes to inspire women to take leadership roles. The Forum Program reached hundreds of Japanese citizens, advocating for their involvement in addressing the needs of Japanese society.
             </p>
-        </article>
+        </section>
 
         <section class="articlePhotos">
             <figure>
@@ -85,6 +87,7 @@
                 <figcaption>Our first public forum</figcaption>
             </figure>
         </section> 
+    </section>
 
 
     <!-- section three "who we are" it has a arcticle card with the founders pin name and small p and two sections maybe h2 and two ps-->
@@ -111,9 +114,8 @@
             </article>
 
             <article>
-                <h3>Simmons 
-                <br>
-                Boston, Massachuseetts</h3>
+                <h3>Simmons</h3>
+                <h3 class="loc">Boston, Massachuseetts</h3>
                 <p>In 2007, the second year of JWLI, the Center for Gender in Organizations (CGO) at the Simmons School of Management in Boston became JWLI's institutional and academic partner. CGO was selected because of their unique expertise in the areas pertaining to gender and leadership, its program located in the first business school in the world designed specifically for women, and expertise in the area of nonprofit management</p>
             </article>
         </section>
@@ -124,7 +126,7 @@
         <h2>Sign Up For Our Newsletter</h2>
 
         <form>
-            <label for="newsletter-email" class="visually-hidden">Email</label>
+            <label for="newsletter-email" class="visually-hidden"></label>
             <input type="email" id="newsletter-email" placeholder="Email">
             <button type="submit">Submit</button>
         </form>
@@ -169,7 +171,7 @@
             </section>
 
             <section>
-                <h3>JWLIA</h3>
+                <h3 class="name">JWLIA</h3>
                 <ul>
                     <li><a href="#">History</a></li>
                     <li><a href="#">Activities in Japan</a></li>
@@ -190,7 +192,7 @@
                 <h3>Contact</h3>
             </section>
 
-            <section>
+            <section class="jap">
                 <h3>日本語</h3>
             </section>
 

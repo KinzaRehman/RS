@@ -151,4 +151,20 @@ nav a {
 
     
 }
+/*last screen */
 
+@media screen and (max-width: 400px) {
+
+     header, footer {
+          display: none
+     }
+     main, .bottom {
+          text-align: center;
+          justify-content: center;
+          font-size: 1em;
+          height: 250px;
+          color: pink;
+          
+          background-color: azure;
+     }
+}

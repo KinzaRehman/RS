@@ -7,6 +7,10 @@
     padding: 0;
 }
 
+#small {
+    display:none;
+}
+
 body > header, body > footer {
     width: 100%;
     display: flex;
@@ -309,4 +313,34 @@ a {
         text-align: center;
         font-size: 14px;
     }
+}
+
+
+@media screen and (max-width: 300px) {
+  .main,
+  header nav,
+  header > img {
+    display: none;
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+  }
+
+  header > img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  #small {
+    color: blue ;
+    display: block;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+  }
 }
