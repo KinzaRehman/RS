@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-    	<meta charset="utf-8">
-    	<meta name="description" content="This is where your description goes">
-    	<meta name="keywords" content="one, two, three">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Temperature converter">
+    <meta name="keywords" content="temperature, celsius, fahrenheit">
 
-		<title>Temperature converter</title>
+    <title>Temperature Converter</title>
 
-		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-		<h1> Temperature Converter </h1>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-		<form>
+<body>
 
-			<label for="celcius"> Celcius temp: </label>
-			<input id="celcius" type="int" placeholder="Temperature in Celcius">
-			
-		</form>
+    <h1>Temperature Converter</h1>
 
-		<button id="convert" type="button" name="button">The temperautre is</button>
+    <form>
+        <label for="celsius">Celsius temp:</label>
 
-		<h2 id="convertTempCelcius"></h2>
+        <input  id="celsius"  type="number" placeholder="Temperature in Celsius">
+    </form>
 
-		
-		<script type="text/javascript" src="js/main.js"></script>
-	</body>
+    <button id="convert" type="button">Convert Temperature</button>
+
+    <h2 id="convertedTemp"></h2>
+
+    <script src="js/main.js"></script>
+
+</body>
 </html>
