@@ -5,6 +5,8 @@
 /* Box Model Hack */
 *{
   box-sizing: border-box;
+  background-color: lightpink;
+  color: black; 
 }
 
 /******************************************
