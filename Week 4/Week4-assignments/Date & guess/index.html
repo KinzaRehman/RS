@@ -5,7 +5,7 @@
     	<meta name="description" content="This is where your description goes">
     	<meta name="keywords" content="one, two, three">
 
-		<title>New Yorsk Seasonal Flowers</title>
+		<title>New Yorks Seasonal Flowers</title>
 
 		<!-- external CSS link -->
 		<link rel="stylesheet" href="css/normalize.css">
@@ -17,12 +17,187 @@
 		</header> 
 
 		<section> 
-			<p> Excited to give some seasonal flower recommendations based on the seasons in new york! </p>
-			<ol>
-				<li>select your Month, and day</li>
+			<p> Excited to give share some seasonal flower recommendations based on the month in New York! </p>
+			<label for="month"> Please select a Date! </label>
+			<input type="date" id="month">
+			<button type="button" id="submit">Lets plant some flowers!</button> 
 
+			<h2 id="season">The seasons is: </h2>
+			<p id="displaySeason"></p>
 
+			<!-- lists for each seasons-->
+			<!-- Inner HTML-->
+			<section id="months"> 
+				<!-- sectioning january stuff-->
+				<section id="Jan">
+					<h3>January is Winter Elegance</h3>
+					<p>Some in season flowers:</p>
+					<ul>
+						<li><img src="https://ngb.org/wp-content/uploads/2022/09/Amaryllis_Double-Dream_DutchGrown_02-scaled.jpg"> Amaryllis </li>
+						<li><img src="https://media.istockphoto.com/id/615422208/photo/close-up-of-anemones.jpg?s=612x612&w=0&k=20&c=loGcWG5QsNX9vCj5BexQiUTbQw3KUVkBca7bSvaGh_g="> Anemones </li>
+						<li><img src="https://media.istockphoto.com/id/96944580/photo/white-narcissus-blooming.jpg?s=612x612&w=0&k=20&c=HQvHG5AZqnCP4ozrAwg1SMOtSCDN5T-aZHofg2ojlJM="> Paperwhites </li>
+						<li><img src="https://media.istockphoto.com/id/115950862/photo/persian-buttercups-ranunculus-asiaticus-peach-and-pink.jpg?s=612x612&w=is&k=20&c=eVM5c6E8asBcPtZ_u3feVjeJpCD8KZ-mZ-6NEkLpxHw="> Ranunchulus </li>
+						<li><img src="https://media.istockphoto.com/id/120747085/photo/helleborus-in-the-garden.jpg?s=612x612&w=is&k=20&c=Oc-vAL-lDPNcgwahkJbBGplGlTJpOevEcmofJeDxGCs="> Hellebores </li>
+						<li><img src="https://media.istockphoto.com/id/2153928687/photo/close-up-of-stunning-yellow-orchids-flourishing-in-a-greenhouse.jpg?s=612x612&w=0&k=20&c=_EnVyP-IUlJIYFOs_XIc7E8zw6ebUfD6qJ6oUoXH6yo="> Orchids</li> 
+					</ul>
+				</section> 
 
+				<!-- sectioning feb stuff-->
+				<section id="Feb">
+					<h3> February is red hearts! </h3>
+					<p>some in season flowers:</p>
+					<ul>
+						<li><img src="https://media.istockphoto.com/id/1256125259/photo/pink-roses-in-garden.jpg?s=612x612&w=0&k=20&c=_Ook5Blxe5_k5g8J3Y8KkUQPO8lo53SGVKWb53F-sPQ="> Roses </li>
+						<li><img src="https://images.unsplash.com/photo-1461342249744-29a57e9bd1cb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> Tulips </li>
+						<li><img src="https://media.istockphoto.com/id/2262392686/photo/bumblebee-on-a-sweet-pea-flower.jpg?s=612x612&w=is&k=20&c=x2Z6bBXkZeRc6EhjhkFPdeYIEnzfBF0INitviPI5bVw="> Sweet Peas </li>
+						<li><img src="https://media.istockphoto.com/id/131802173/photo/red-camelia-bush.jpg?s=612x612&w=is&k=20&c=dgeuRey_OUJ8tmg_PRdv7gu33d8Vqc-SkfWSoLeGlZQ="> Camellias </li>
+						<li><img src="https://media.istockphoto.com/id/1500486091/photo/yellow-rose-damascena-fields-in-turkish-greenhouse.jpg?s=612x612&w=is&k=20&c=KWAGflLcrigswHvpbzWq74F7RG2cG3nQebq0BakF8wo="> Ranunchulus </li>
+						<li><img src="https://media.istockphoto.com/id/157192388/photo/mass-planting-of-perfect-spring-hyacinths.jpg?s=612x612&w=is&k=20&c=b5Be_W9aZJnGTqc4Oi6nLZuGl4nuISrTabU5uxPVJH8="> Hyacinths </li> 
+					</ul>
+				</section> 
+
+				<!-- sectioning Mar stuff-->
+				<section id="Mar">
+					<h3>March is spring awakening!</h3>
+					<p>Some in season flowers</p>
+					<ul>
+						<li><img src="https://media.istockphoto.com/id/2152890681/photo/daffodil.jpg?s=612x612&w=is&k=20&c=_Dsy_gwGRBYBQUBT2vG2Y0nAD2XkSM5LOh7h3opFmwk=">Daffodils</li>
+						<li><img src="https://images.unsplash.com/photo-1461342249744-29a57e9bd1cb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">Tulips</li>
+						<li><img src="https://media.istockphoto.com/id/2204153384/photo/dark-blue-iris-reticulata-harmony-in-flower.jpg?s=612x612&w=is&k=20&c=BmqoDK6QDqveNvZCtu9iTjpLXyIcgPWh5IF_X8EsN5Q=">Irises</li>
+						<li><img src="https://media.istockphoto.com/id/157192388/photo/mass-planting-of-perfect-spring-hyacinths.jpg?s=612x612&w=is&k=20&c=b5Be_W9aZJnGTqc4Oi6nLZuGl4nuISrTabU5uxPVJH8=">Hyacinths</li>
+						<li><img src="https://media.istockphoto.com/id/172738257/photo/freesias.jpg?s=612x612&w=is&k=20&c=QeqcdiaGNHze4DyqRA3X5bPOiLPd_HgNZx3cPlTtWro=">Freesia</li>
+						<li><img src="https://media.istockphoto.com/id/1384866507/photo/close-up-of-a-branch-of-a-pussy-willow-as-a-symbol-for-spring.jpg?s=612x612&w=is&k=20&c=_NtW8KxvhDr_7LARdGrZ6mbi2kYRKNbaFMboOt8OueM=">Pussy willows</li>
+					</ul>
+				</section> 
+
+				<!-- sectioning Apr stuff-->
+				<section id="Apr">
+					<h3>April is peak Spring!</h3>
+					<p>Some in season flowers</p>
+					<ul>
+						<li><img src="https://media.istockphoto.com/id/177130955/photo/close-up-of-pink-peonies-in-open-field.jpg?s=612x612&w=0&k=20&c=T-zQzUE5C2TR3s3ExhW6-qTczm16z0YdR7tahFEcjOE=">Peonies</li>
+						<li><img src="https://images.unsplash.com/photo-1461342249744-29a57e9bd1cb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">Tulips</li>
+						<li><img src="https://media.istockphoto.com/id/1370295417/photo/cherry-blossoms-in-full-bloom-in-park.jpg?s=612x612&w=is&k=20&c=NFaSPJs9T5XCpTs8xoK6cf6mx6DiTyJJmWHu6kDov0g=">Cherry blossoms </li>
+						<li><img src="https://media.istockphoto.com/id/1199046500/photo/lily-of-the-valley-bouquet.jpg?s=612x612&w=is&k=20&c=iibxPomriMBGhTNElMzAJ0HJm_EAylCScFt5gjDEVvs=">Lily of the valley</li>
+						<li><img src="https://media.istockphoto.com/id/471707459/photo/field-of-ranunculus-flowers.jpg?s=612x612&w=is&k=20&c=V6f-6HToC05aHcxYkODB-uGvrRPncdukkHemoRUPgGU=">Ranunchulus</li>
+					</ul>
+				</section> 
+
+				<!-- sectioning May -->
+				<section id="May">
+					<h3>May is peony Season!</h3>
+					<p>Some in season flowers</p>
+					<ul>
+						<li><img src="https://media.istockphoto.com/id/177130955/photo/close-up-of-pink-peonies-in-open-field.jpg?s=612x612&w=0&k=20&c=T-zQzUE5C2TR3s3ExhW6-qTczm16z0YdR7tahFEcjOE=">Peonies</li>
+						<li><img src="https://media.istockphoto.com/id/1020966502/photo/rose.jpg?s=612x612&w=is&k=20&c=gjbw2fjjfMSb4LK5y-T7PFipxnAHdBnXZv1xdtwLvDw=">Garden roses</li>
+						<li><img src="https://media.istockphoto.com/id/2195259628/photo/bright-orange-monarch-butterfly-on-a-lilac-flower-in-the-garden.jpg?s=612x612&w=0&k=20&c=O5_NDdn4CYZ5Ea87lXqdzL_cr87XurjgUzuFzj1iz60=">Lilacs</li>
+						<li><img src="https://media.istockphoto.com/id/1290631884/photo/beautiful-antirrhinum-majus-dragon-flower-also-known-as-snap-dragons-and-tagetes-patula.jpg?s=612x612&w=0&k=20&c=i8cjedzH7a8Gc9LRQwej6EbXa9di7t_ovx-tCbr88EM=">Snapdragons</li>
+						<li><img src="https://media.istockphoto.com/id/1674985931/photo/two-bumblebees-and-a-bee-on-an-allium-flower-in-the-garden.jpg?s=612x612&w=0&k=20&c=oWpZBrgK5f8OUgsYo9GrrF1GuPuHBxwxGFyKy9X41Fg=">Allium</li>
+					</ul>
+				</section> 
+
+				<!-- sectioning june stuff-->
+				<section id="Jun">
+					<h3>June is officially summer!</h3>
+					<p>Some in season flowers</p>
+					<ul>
+						<li><img src="https://media.istockphoto.com/id/177130955/photo/close-up-of-pink-peonies-in-open-field.jpg?s=612x612&w=0&k=20&c=T-zQzUE5C2TR3s3ExhW6-qTczm16z0YdR7tahFEcjOE=">Peonies</li>
+						<li><img src="https://media.istockphoto.com/id/1256125259/photo/pink-roses-in-garden.jpg?s=612x612&w=0&k=20&c=_Ook5Blxe5_k5g8J3Y8KkUQPO8lo53SGVKWb53F-sPQ=">Roses</li>
+						<li><img src="https://media.istockphoto.com/id/507187093/photo/pink-and-purple-hydrangea-flowers-lacecap-hydrangea-bush-shady-garden.jpg?s=612x612&w=is&k=20&c=97YTgUnoS5sxi1LgT4EgE1ZvC1_aMJAtpEvrdNYCmhs=">Hydranges</li>
+						<li><img src="https://media.istockphoto.com/id/117019461/photo/blue-delphinium-flowers-and-roses-blooming-in-summer-garden.jpg?s=612x612&w=is&k=20&c=tXJ_kM3CTFXn0StZyBcUcFyApbJwDgFJYbqe1_0ask8=">Delphinium</li>
+						<li><img src="https://media.istockphoto.com/id/2171076990/photo/lisianthus-pink-purple-flowers-field-blooming-in-garden-background.jpg?s=612x612&w=is&k=20&c=YsGG8TInISwXtUVTT2DUIYiSvtg74wCgklshRIIkql4=">Lisianthus</li>
+						<li><img src="https://media.istockphoto.com/id/1384197163/photo/beautiful-lavender-field-at-sunrise-purple-flower-background.jpg?s=612x612&w=is&k=20&c=QYj-9zLvBDLKW7kxymTOdQQxxHK1Z_7r16x1JsX-WR0=">Lavender</li>
+					</ul>
+				</section> 
+
+				<!-- sectioning july stuff-->
+				<section id="Jul">
+					<h3>July is high summer</h3>
+					<p>Some in season flowers</p>
+					<ul>
+						<li><img src="https://media.istockphoto.com/id/1407748664/photo/sunflowers-blooming-in-missouri-field-in-july.jpg?s=612x612&w=is&k=20&c=POGg6iw0IBgNHtKAmmiId5MfRJe01G10JhU63TnNrtw=">Sunflowers</li>
+						<li><img src="https://media.istockphoto.com/id/943457828/photo/group-of-colorful-dahlia-flower.jpg?s=612x612&w=is&k=20&c=mlzrkilgRdbOyFXwc557Drf3B50q2u8j5PBWACY4D3U=">Dahlias</li>
+						<li><img src="https://media.istockphoto.com/id/1315885835/photo/beautiful-colorful-zinnias-in-the-summer-garden.jpg?s=612x612&w=0&k=20&c=XK5yd0bmuxQASz2RMOLAtFvgRQX5lyINLcUT0IGxMOE=">Zinnias </li>
+						<li><img src="https://media.istockphoto.com/id/1195066019/photo/cosmos-flowers.jpg?s=612x612&w=is&k=20&c=inuGxO7Lc2Mh9vratDzxFIKNuQZKNoGwMXNq39F2tSc=">Cosmos</li>
+						<li><img src="https://media.istockphoto.com/id/882685318/photo/gladiolus-on-the-wide-flower-field-in-golden-sunshine.jpg?s=612x612&w=is&k=20&c=C7nZazzSEba4QXikjFiYnY8ro1oq5Cd1VDlEvr2DsvM=">Gladiolus</li>
+						<li><img src="https://media.istockphoto.com/id/1256125259/photo/pink-roses-in-garden.jpg?s=612x612&w=0&k=20&c=_Ook5Blxe5_k5g8J3Y8KkUQPO8lo53SGVKWb53F-sPQ=">Roses</li>
+					</ul>
+				</section> 
+
+				<!-- sectioning August stuff-->
+				<section id="Aug">
+					<h3>August is late summer abundance!</h3>
+					<p>Some in season flowers</p>
+					<ul>
+						<li><img src="https://media.istockphoto.com/id/1256317456/photo/sunflower-field.jpg?s=612x612&w=is&k=20&c=PRsEVNGBSI4uAq3JuO-D3zFdAAJoj0wznc6G7-xaYdI=">Sunflowers</li>
+						<li><img src="https://media.istockphoto.com/id/943457828/photo/group-of-colorful-dahlia-flower.jpg?s=612x612&w=is&k=20&c=mlzrkilgRdbOyFXwc557Drf3B50q2u8j5PBWACY4D3U=">Dahlias</li>
+						<li><img src="https://media.gettyimages.com/id/665533834/photo/polianthes-tuberosa-tuberose-in-the-garden.jpg?s=170667a&w=gi&k=20&c=ZSQ0hD-oKcJ8W8dozeVnCAfLl2x0Y80FtXg1TWEm6_4=">Tuberose </li>
+						<li><img src="https://media.istockphoto.com/id/2219738978/photo/garden-of-pink-lisanthus-flowers.jpg?s=612x612&w=is&k=20&c=2cZ1cQaUi1LNqIWz0dqA38t0nGHRQSCWlWyMBMG--PY=">Lisiantus</li>
+						<li><img src="https://media.istockphoto.com/id/155140782/photo/close-up-monarch-butterflies-resting-on-flowers.jpg?s=612x612&w=is&k=20&c=_MM2WAA24bu1-sgP9qrcU4hvRz_RhmacSmN2ons8680=">Aesters</li>
+						<li><img src="https://media.istockphoto.com/id/1060077222/photo/celosia-argentea-celosia-argentea-kimono-series.jpg?s=612x612&w=is&k=20&c=qny7U1IhWBK57awskusbkYHur6JEYImmNc5HN5PXtic="> Celosia</li>
+					</ul>
+				</section> 
+
+			<!--Sectioning september stuff-->
+
+				<section id="Sep">
+					<h3>September is tansitioning to fall! </h3>
+					<p>Some in season flowers</p>
+					<ul>
+						<li><img src="https://media.istockphoto.com/id/1190817350/photo/flowers-wall-background-with-amazing-red-orange-pink-purple-green-and-white-chrysanthemum.jpg?s=612x612&w=is&k=20&c=uLjSFPHnS1nkpUoEWGkat7he7DI86-zn5o-sd3cGqLc="> Chryanthemums</li>
+						<li><img src="https://media.istockphoto.com/id/943457828/photo/group-of-colorful-dahlia-flower.jpg?s=612x612&w=is&k=20&c=mlzrkilgRdbOyFXwc557Drf3B50q2u8j5PBWACY4D3U=">Dahlias</li>
+						<li><img src="https://media.istockphoto.com/id/1347031169/photo/red-and-yellow-flowers-marigolds-lat-tagetes-is-a-genus-of-annual-and-perennial-plants-of-the.jpg?s=612x612&w=is&k=20&c=I0gcaoeCoHQOCNHX-gaAYWsC41fV6jkKdCdgWsVsNqI=">Marigolds</li>
+						<li><img src="https://thumbs.dreamstime.com/b/showy-stonecrop-flowers-sedum-spectabile-hylotelephium-spectabile-flowerbed-showy-stonecrop-flowers-sedum-spectabile-99575192.jpg?w=768">Sedum</li>
+						<li><img src="https://media.istockphoto.com/id/1256125259/photo/pink-roses-in-garden.jpg?s=612x612&w=0&k=20&c=_Ook5Blxe5_k5g8J3Y8KkUQPO8lo53SGVKWb53F-sPQ=">Roses</li>
+						<li><img src="https://media.istockphoto.com/id/1471135137/photo/stonecrop-herbsfreude-flowering-with-clusters-buds-revealing-tiny-star-like-raspberry-pink.jpg?s=612x612&w=is&k=20&c=LNONU1WrPzrP-6DBfoaWfgShb22Ofv56eTeAG5NgQ90=">Ornamental grass</li>
+					</ul>
+				</section> 
+
+				<!-- sectioning october stuff-->
+				<section id="Oct">
+					<h3>October is peak fall!</h3>
+					<p>Some in season flowers</p>
+					<ul>
+						<li><img src="https://media.istockphoto.com/id/1190817350/photo/flowers-wall-background-with-amazing-red-orange-pink-purple-green-and-white-chrysanthemum.jpg?s=612x612&w=is&k=20&c=uLjSFPHnS1nkpUoEWGkat7he7DI86-zn5o-sd3cGqLc="> Chryanthemums</li>
+						<li><img src="https://media.istockphoto.com/id/943457828/photo/group-of-colorful-dahlia-flower.jpg?s=612x612&w=is&k=20&c=mlzrkilgRdbOyFXwc557Drf3B50q2u8j5PBWACY4D3U=">Dahlias</li>
+						<li><img src="https://media.istockphoto.com/id/2202707892/photo/elegant-calla-lily-arrangement-in-keukenhof-netherlands.jpg?s=612x612&w=is&k=20&c=9WN41UFiRQu2xQSoK9-oBZapKjvZPxCcRmc8ZlUiLQM=">Calla Lilies</li>
+						<li><img src="https://media.istockphoto.com/id/1189786837/photo/saint-johns-wort-pumpkin-yellow-flowers-red-berries.jpg?s=612x612&w=is&k=20&c=uq7C4hfOe4nyhYLS05FmaE5QNf0MDqwal3giHD61OBg=">Hypericum berries</li>
+						<li><img src="https://media.istockphoto.com/id/2202359861/photo/solanum-dulcamara.jpg?s=612x612&w=is&k=20&c=Xm0LaO9gVCq5WxITbPXE9Jpyye7TUDbKnri0jUpqw4U=">Bittersweet</li>
+						<li><img src="https://media.istockphoto.com/id/1310360232/photo/brassica-oleracea-or-purple-cabbage-field-in-organic-background.jpg?s=612x612&w=is&k=20&c=Hl0z0KfCqp_Bfz6Gl2RBEZZydpDbX0yNR17mD7STXiU=">Ornamental Kale</li>
+					</ul>
+				</section> 
+
+				<!-- sectioning November stuff-->
+				<section id="Nov">
+					<h3>Novemebr is late Autumn!</h3>
+					<p>Some in season flowers</p>
+					<ul>
+						<li><img src="https://media.istockphoto.com/id/1190817350/photo/flowers-wall-background-with-amazing-red-orange-pink-purple-green-and-white-chrysanthemum.jpg?s=612x612&w=is&k=20&c=uLjSFPHnS1nkpUoEWGkat7he7DI86-zn5o-sd3cGqLc="> Chryanthemums</li>
+						<li><img src="https://media.istockphoto.com/id/1256125259/photo/pink-roses-in-garden.jpg?s=612x612&w=0&k=20&c=_Ook5Blxe5_k5g8J3Y8KkUQPO8lo53SGVKWb53F-sPQ=">Roses</li>
+						<li><img src="https://media.istockphoto.com/id/636637958/photo/abstract-blurred-background-of-colorful-carnation-flowers.jpg?s=1024x1024&w=is&k=20&c=gFBYWrFvOzhoLlPLGhJ4NLGGOutRSaEG3S1Uo88ixHg=">Carnation</li>
+						<li><img src="https://media.istockphoto.com/id/507652589/photo/pincushion-proteas.jpg?s=612x612&w=is&k=20&c=64mHGahX54ty5o-mvXbXzN5VYaOTpSp7NxZWI-ZdDd0=">Protea</li>
+						<li><img src ="https://media.istockphoto.com/id/1078068182/photo/eucalyptus-bouquets.jpg?s=612x612&w=is&k=20&c=SZG8YtZcdIGs3akaDOFTgC1UCG6ZsV1pw4vcn-3wtHM=">Eucaluptus</li>
+					</ul>
+				</section> 
+
+				<!-- sectioning december stuff-->
+				<section id="Dec">
+					<h3>December you've made it</h3>
+					<p>Some in season flowers</p>
+					<ul>
+						<li><img src="https://media.istockphoto.com/id/497054432/photo/christmas-poinsettia.jpg?s=612x612&w=is&k=20&c=ChMevVI0d0MhX0B4SNO5kSVqn9U_p-KS445yRn3NT5c=">Poinsettias</li>
+						<li><img src="https://media.istockphoto.com/id/519429280/photo/hippeastrum-baby-star-red-flowers.jpg?s=612x612&w=is&k=20&c=CGjl9bx4G2Yesmm2gwNqbd1kQ51zU1tyztAUt_nkpvA=">Amaryllis</li>
+						<li><img src="https://media.istockphoto.com/id/96944580/photo/white-narcissus-blooming.jpg?s=612x612&w=0&k=20&c=HQvHG5AZqnCP4ozrAwg1SMOtSCDN5T-aZHofg2ojlJM=">Paperwhites</li>
+						<li><img src="https://media.istockphoto.com/id/1256125259/photo/pink-roses-in-garden.jpg?s=612x612&w=0&k=20&c=_Ook5Blxe5_k5g8J3Y8KkUQPO8lo53SGVKWb53F-sPQ=">Red roses</li>
+						<li><img src="https://media.istockphoto.com/id/2217492971/photo/winterberry-holly-twig-ilex-aquifolium-red-berries-and-green-leaves-close-up.jpg?s=612x612&w=0&k=20&c=KRTxx9MSo624NmcHYfSCosvEUrYw-iwaESV8xbl0vYE=">Holly and evergreen </li>
+						<li><img src="https://media.istockphoto.com/id/2153928687/photo/close-up-of-stunning-yellow-orchids-flourishing-in-a-greenhouse.jpg?s=612x612&w=0&k=20&c=_EnVyP-IUlJIYFOs_XIc7E8zw6ebUfD6qJ6oUoXH6yo=">Orchids </li>
+					</ul>
+				</section> 
+			</section>	
+		<footer> 
+			<a href="https://tjflowersandevents.com/blogs/tj-flowers-blog/flowers-in-season-nyc-monthly-guide">Learn More</a>
+		<footer>
+	
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
