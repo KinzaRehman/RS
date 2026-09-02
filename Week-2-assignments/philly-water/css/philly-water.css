@@ -1,0 +1,436 @@
+/*philly ressturant:NYC - Georgia */
+
+/*
+Boston, Philly, Maine - Arial
+NYC - Georgia
+Maine Shack - 'Lilita One' & 'Nunito Sans'
+Philly Water Ice - Titan One & Nunito
+*/
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: "Nunito", "Titan One", 'Times New Roman', Times, serif;
+}
+
+/*the whole body has a left and right padding of about 10-20?*/
+body {
+    margin: 0;
+}
+
+body > header > h2, 
+.photo h1,  
+.one h3,
+.two h3,
+.three h3, 
+.three h3 section div div h3 + p, 
+.footer h3 {
+    font-family: "Titan One";
+}
+/* header */
+body > header {
+    background-color: rgb(224, 33, 138);
+    color: white;
+    height: 60px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+    /* border: 3px line darkmagenta; */
+    box-sizing: border-box;
+}
+header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+body > header nav {
+    display: flex;
+    align-items: center;
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style:none;
+    margin: 0;
+    padding:0;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav li:last-child{
+    background-color: yellow;
+    padding: auto;
+    border-radius: 20px;
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+
+nav a {
+    color: rgb(236, 232, 232);
+    text-decoration: none;
+}
+
+/* section yellow line class=  "main" */
+.main {
+    height: 30px;
+    background-color: yellow;
+    color: brown;
+    font-display: auto;
+    text-align: center;
+    font-weight: 700;
+    padding: 5px;
+}
+
+/* section class = "photo" : background photot with the iamge as a background and pink gradient background.  */
+
+.photo { 
+    background-image: url( "../philly-water-img/main.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding: 35px 60px;
+    position: relative;
+    overflow: hidden;
+}
+/*this was obtianed from google, i  dont understand it but it works */ 
+
+.photo::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    background-color: rgba(255, 0, 0, 0.4); /* semi-transparent red */
+}
+
+.photo .photoCont {
+    z-index: 1;
+    text-align: left;
+    width: 600px;
+    color: white;
+    overflow: hidden;
+}
+.photoCont > p {
+    color: whitesmoke;
+    padding-bottom: 20px;
+}
+.photoCont > p:first-child {
+    color: gold;
+}
+
+.photoCont h1 {
+    font-size: 48px;
+    padding-bottom: 20px;
+}
+
+.photoCont a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.photoCont a:first-of-type {
+    font-weight: 300;
+    background-color: yellow;
+    color: black;
+    font-weight: 600;
+    
+}
+
+.photoCont a:last-of-type {
+    background-color: transparent;
+    border: 2px solid white;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.photoCont > p:last-child {
+    font-weight: bold;
+}
+
+/**similarities in all three section */
+.one, .two, .three {
+    padding: 35px 60px; 
+}
+.one > h2 , .two > h2 , .three > h2 {
+    padding: 0;
+    text-align: left;
+    margin-bottom: 10px;
+    color:rgb(224, 33, 138);
+    font-size: 20px; 
+}
+
+.one > h3 , .two > h3 , .three > h3 {
+    padding: 0;
+    text-align: left;
+    margin-bottom: 15px;
+    color:rgb(58, 36, 40);
+    font-size: 30px;
+}
+
+/* section class = "one"  the flavor board it will have to be a section within a section. */
+.one {
+    background-color: antiquewhite;
+
+}
+.one > p:first-of-type {
+    padding: 0;
+    text-align: left;
+    font-size: 14PX;
+    margin-bottom: 30PX;
+}
+
+/*aggregate all of my cards and then we can see*/
+.one ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.one li {
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 20px;
+    flex: 0 0 calc((100% - 30px) / 4);
+    text-align: left;
+    border-top: 5px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.one li h3::before {
+    content: "●";
+    margin-right: 8px;
+}
+
+
+.one li {
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 20px;
+    flex: 0 0 calc((100% - 30px) / 4);
+    text-align: left;
+}
+
+/* add the bullet before every flavor name */
+.one li h3::before {
+    content: "\25CF";
+    margin-right: 8px;
+}
+
+.one li.cherry {
+    border-top: 5px solid red;
+}
+
+.one li.cherry h3::before {
+    color: red;
+}
+.one li.lemon {
+    border-top: 5px solid gold;
+}
+
+.one li.lemon h3::before {
+    color: gold;
+}
+
+.one li.blueRaspberry {
+    border-top: 5px solid blue;
+}
+
+.one li.blueRaspberry h3::before {
+    color: blue;
+}
+
+.one li.mango {
+    border-top: 5px solid orange;
+}
+
+.one li.mango h3::before {
+    color: orange;
+}
+
+.one li.cottonCandy {
+    border-top: 5px solid plum;
+}
+
+.one li.cottonCandy h3::before {
+    color: plum;
+}
+
+.one > p:last-of-type {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.one > p:last-of-type strong {
+    background-color: yellow;
+    padding: 4px 6px;
+    border-radius: 5px;
+}
+/* sizes section, class = "two"  */
+
+.two {
+    background-color: rgba(121, 229, 243, 0.842);
+    padding-bottom: 35px;
+}
+
+.cup-options { 
+    display: flex;
+    gap: 15px;
+    padding: 0px;
+    margin-top: 25px;
+}
+
+.cup-card {
+    overflow: hidden;
+    background-color: white;
+    border-radius: 15px;
+    flex: 1;
+    text-align: center;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cup-card h3 {
+    font-size: 25px;
+    text-align: center;
+    padding: 5px 7px;
+}
+.cup-card p strong {
+    font-family: "Titan One";
+    font-size: 20px;
+    text-align: center;
+    color: rgb(224, 33, 138);
+    padding-top: 20px;
+}
+.cup-card p strong + p {
+    font-size: 15px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.two > p {
+    text-align: center;
+}
+
+
+/* put the 3 sections maybe give them a class<idk ?> next to each other */
+
+
+.three {
+    background-color: antiquewhite;
+}
+
+.three .threeO {
+    display: inline-block;
+    vertical-align: top;
+    width: 31%;
+    min-height: 220px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-right: 2%;
+    text-align: left;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.three .threeO:last-of-type {
+    margin-right: 0;
+}
+
+.three .threeO h3 {
+    color: rgb(224, 33, 138);
+    text-align: left;
+    padding: 0;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.three .threeO p {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.three .threeO a {
+    color: rgb(224, 33, 138);
+    text-decoration: none;
+}
+
+.threeO > section { 
+    background-color: yellow;
+    padding: 8px 8px; 
+    border-radius: 12px;
+    display: inline-block;
+}
+/* footer: it has a three contianers  and then a line and then the c  and back to top.. */
+footer {
+    background-color: rgb(58, 36, 40);
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px 60px;
+}
+
+/* tackle the 3 sections and then think about the last few its and bits */
+footer > section:nth-of-type(1),
+footer > section:nth-of-type(2),
+footer > section:nth-of-type(3) {
+    width: 30%;
+    text-align: left;
+}
+
+/* Footer headings */
+footer h3 {
+    color: rgb(224, 219, 221);
+    margin-bottom: 15px;
+}
+
+/* Footer paragraphs */
+footer p {
+    margin-bottom: 8px;
+}
+
+/* Make the <br> force the next items to a new row */
+footer > br {
+    flex-basis: 100%;
+    height: 0;
+}
+
+/* Copyright */
+footer > section:nth-of-type(4) {
+    width: 50%;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid white;
+}
+
+/* Back to Top */
+footer > section:nth-of-type(5) {
+    width: 50%;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid white;
+    text-align: left;
+}
+
+/* Footer links */
+footer a {
+    color: white;
+    text-decoration: none;
+}

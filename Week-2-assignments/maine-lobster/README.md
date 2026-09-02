@@ -1,0 +1,1 @@
+the h1, h2s are based on what was visible on the images. Also watched youtube vidoes to figure out menue items and tables. 

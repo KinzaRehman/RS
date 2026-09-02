@@ -1,0 +1,594 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', 'Lilita One', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+:root {
+  --dark-green: #548372;
+  --black: #111111;
+  --light-gray: #fffffccc;
+  --light-green: #e4f4ed;
+  --gray: #949490;
+  --cream: rgb(252, 251, 244);
+  --darkestgreen: rgb(31, 39, 31); 
+  --darkestgreenOpaque: rgba(58, 73, 58, 0.781); 
+
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+html,
+body {
+  background:var(--light-gray);
+  height: 100%;
+  line-height: 1.6;
+
+}
+
+h1, h2, h3{
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+h2 {
+  color: var(--dark-green);
+  text-transform: uppercase;
+  letter-spacing: 0.1em; 
+  font-size: 1em;
+}
+
+h3 {
+  color: var(--black);
+  font-family: "Inter", sans-serif;
+  font-size: 3em;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 10%);
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 8%;
+  box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 10%);
+}
+
+header h1 strong {
+  color: var(--dark-green);
+  text-shadow: 0 0 0.4rem var(--dark-green);
+}
+
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  font-weight: bold;
+}
+
+nav a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+nav li:last-child a {
+  color: var(--gray);
+
+}
+
+nav button {
+  font-weight: bold;
+  padding: 0.65em 1.4em;
+  color: var(--black);
+  background-color: var(--dark-green);
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+
+/* target the main section */ 
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 35%;
+  padding: 5rem 12%;
+  background: url("../photos/line-main-back.avif") center / cover no-repeat;
+}
+
+.main-left,
+.main-right {
+  width: 45%;
+}
+
+.main-left h3 {
+  max-width: 12ch;
+  margin: 0.5rem 0 1rem;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1;
+}
+
+.main-left input {
+  width: 60%;
+  padding: 0.8em 1.2em;
+  border: 0.0625rem solid lightgray;
+  border-radius: 2rem;
+}
+
+.main-left button {
+  padding: 0.8em 1.4em;
+  color: white;
+  background: var(--dark-green);
+  border: 0;
+  border-radius: 2rem;
+}
+
+.main-left p:last-child {
+  font-size: 0.75rem;
+}
+
+.main-right img {
+  display: block;
+  width: 70%;
+  margin: auto;
+  border: 0.1875rem solid var(--black);
+  border-radius: 1rem;
+}
+/* da 1st section */ 
+.one {
+  background: var(--light-gray);
+  text-align: center;
+  padding: 2rem 8%;
+}
+
+.one ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+
+}
+.one a {
+  text-decoration: none;
+  color: var(--gray);
+
+}
+.one li:nth-child(1) a {
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+}
+
+.one li:nth-child(2) a {
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+
+.one li:nth-child(3) a {
+  font-family: "Courier New", monospace;
+}
+
+.one li:nth-child(4) a {
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+.one li:nth-child(5) a {
+  font-family: "Arial Black", sans-serif;
+}
+
+.one li:nth-child(6) a {
+  font-family: cursive;
+  font-style: italic;
+}
+/* section two three five six are simialr*/ 
+
+.two, .three, .five, .six {
+  display: flex; 
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 5rem 12%;
+
+}
+.two > h2, .two > h3, .two > p,
+.three > h2, .three > h3,
+.five > h2, .five > h3, .five > p,
+.six > h2, .six > h3, .six > p {
+  width: 100%;
+  margin:0;
+}
+
+
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background: var(--cream);
+  box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 10%);
+}
+
+.two .card p:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  color: gold;
+  background: var(--light-green);
+  border-radius: 20%
+}
+.two, .four, .five { 
+  background-color: var(--cream);
+}
+
+.three{
+  background-color: var(--light-green);
+}
+
+.three .card p:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  color: gold;
+  background: var(--black);
+  border-radius: 50%;
+}
+.three .card p:nth-of-type(2), .two .card p:nth-of-type(2) {
+  font-weight: bold;
+}
+
+.four {
+  display: flex;
+  align-items: stretch;
+  gap: 10%;
+  padding: 5rem 12%;
+}
+
+.fourLeft,
+.fourRight {
+  width: 50%;
+}
+
+.fourLeft img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 10%);
+
+}
+
+.fourRight ul, .six .card ul {
+  padding: 0;
+  list-style: none;
+}
+
+.five .card {
+  text-align: left;
+  align-items: flex-start;
+}
+
+.fourRight li::before, .six .card li::before {
+  content: "✓";
+  color: var(--dark-green);
+  padding-right: 0.5em;
+}
+.five, .eight {
+  text-align: center;
+}
+.six {
+  background-color: var(--darkestgreen);
+  text-align: center;
+}
+.six h2 {
+  color: gold;
+}
+.six .card {
+  text-align: left;
+}
+.six .card a {
+  justify-content: flex-end;
+  align-items: end;
+}
+.six button {
+  font-weight: bold;
+  padding: 0.65em 1.4em;
+  color: var(--cream);
+  background-color: var(--dark-green);
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  justify-content: end;
+  align-items: flex-end;
+  margin-top: auto;
+
+
+}
+.six > .card:nth-of-type(1),
+.six > .card:nth-of-type(3) {
+  color: var(--cream);
+  background: var(--darkestgreenOpaque);
+}
+.six > .card:nth-of-type(2) > button {
+  background-color: var(--darkestgreen);
+}
+.six > p {
+  color: var(--cream);
+}
+.six h3 {
+  color: var(--cream);
+}
+
+/*section seven faqs */ 
+.seven {
+  padding: 5rem 12%;
+}
+.faq {
+  display:flex; 
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq details {
+  padding: 1rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 10%);
+
+}
+
+.faq summary {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq summary::after {
+  content: "+";
+  color: var(--dark-green);
+}
+
+.faq details[open] summary::after {
+  content: "−";
+}
+
+/*section eight */
+.eight {
+  padding: 4rem 10%;
+  text-align: center;
+  color: var(--cream);
+  background: var(--dark-green);
+}
+
+.eight h3 {
+  color: var(--cream);
+}
+
+.eight button {
+  padding: 0.65em 1.4em;
+  color: var(--cream);
+  font-weight: bold;
+  background: var(--darkestgreen);
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+/*footer stuff same as jwila*/ 
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4rem 12%;
+  color: var(--cream);
+  background: var(--darkestgreen);
+}
+
+.footerNav {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footerNav section:first-child {
+  width: 25%;
+}
+
+.footerNav h3 {
+  margin-top: 0;
+  color: var(--cream);
+  font-size: 1rem;
+}
+
+.footerNav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footerNav a {
+  color: var(--cream);
+  font-weight: normal;
+  text-decoration: none;
+}
+
+
+
+.footerBottom {
+  position: relative;
+  width: 100%;
+  padding-top: 2rem;
+  border-top: 0.0625rem solid var(--gray);
+  color: var(--gray);
+  font-size: 0.75rem;
+}
+
+.footerBottom p:last-child {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+@media screen and (max-width: 600px) {
+  header,  .main,  .four,  .footerNav {
+    flex-direction: column;
+  }
+  img, header nav, footer .footerNav {
+    display:none;
+  }
+
+  header, nav ul {
+    gap: 1rem;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .main-left, .main-right, .fourLeft, .fourRight, .footerNav section:first-child {
+     width: 100%;
+  }
+
+  .card {
+    flex-basis: 100%;
+  }
+
+  .main-right img {
+    width: 80%;
+  }
+
+
+  .footerBottom {
+    text-align: center;
+  }
+
+  .footerBottom p:last-child {
+    position: static;
+    transform: none;
+  }
+  .footerBottom {
+    display: block;
+  }
+}
+  
+
+@media screen and (max-width: 1250px) {
+  .fourLeft img{
+    display: none;
+  }
+  .fourRight {
+    width:100%;
+
+  }
+}
+
+  /* Tablets */
+@media screen and (max-width: 968px) {
+  .main-right {
+    display: none;
+  }
+  .main-left {
+    width: auto;
+  }
+  .main, .two, .three, .four, .five, .six, .seven, .eight, footer {
+    padding: 4rem 8%;
+  }
+
+  nav, nav ul {
+    gap: 0.75rem;
+  }
+
+  .one ul {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    flex-basis: 45%;
+  }
+}
+
+
+@media screen and (max-width: 300px) {
+  .main, .one, .two, .three, .four, .five, .six, .seven, .eight {
+    display: none;
+  }
+
+  header nav, .footerNav, .footerBottom p:first-child {
+    display: none;
+  }
+
+  header {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  header::after {
+    content: "";
+    width: 100%;
+    height: 15rem;
+    background: url("https://media.makeameme.org/created/i-cant-see-z5njkj.jpg")
+      center / contain no-repeat;
+  }
+
+  .footerBottom p:last-child {
+    position: static;
+    text-align: center;
+    transform: none;
+  }
+}
