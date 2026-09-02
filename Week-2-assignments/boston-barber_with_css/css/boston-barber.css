@@ -1,0 +1,140 @@
+/* boston barber*/
+*{
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer{
+    color: aliceblue;
+    background-color: black;
+    overflow: auto;
+    padding: 25px 20px;
+    }
+
+header h2{
+    float:left;
+    margin:0;
+}
+/* how cna i style alternating text color rather than using a span? */
+header h2 span {
+    color:rgb(121, 31, 31);
+}
+
+nav {
+    float:right;
+}
+
+nav ul { 
+    list-style: none;
+    margin: 0; 
+    padding: 0;
+}
+
+nav li { 
+    float: left; 
+    margin-right: 20px;
+}
+
+nav a { 
+    color: white; 
+    text-decoration: none;
+}
+
+/* Target the section class one*/
+
+body > header + section {
+    background-color: rgb(121, 31, 31);
+    text-align:center;
+    padding: 60px 20px;
+    color: aliceblue;
+}
+body > header + section:last-child {
+    margin-bottom: 30px;
+}
+
+body > header + section a {
+    display: inline-block;
+    padding: 5px;
+    background-color: black;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+/*target section classmain then two , break it down by table, i think i justt need to have it centered, and then a line under it? */ 
+section.main{
+    background-color: #ffffef;
+    padding: 30px 0px;
+    width: 100%;
+}
+
+/*target section class two with the table , maybe float top and bottom */
+section.main > section.two, section.main > section.three {
+    width: 60%;
+    margin: 0 auto;
+}
+section.main > section.two h2, section.main > section.three h2  {
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 10px;
+}
+section.main >section.two table {
+    border-top: 2px solid darkred;
+    width: 100%;
+    padding-bottom: 25px;
+}
+section.main >section.two table td {
+    border-bottom: 1px solid rgb(156, 152, 152);
+}
+
+/* section three, 30/70 split, img and img caption is like one and then the p*/
+
+section.main >section.three h2 {
+    border-bottom: 2px solid darkred;
+    padding-top: 10px;
+    margin-bottom: 15px;
+}
+
+section.main > section.three {
+    overflow:hidden;
+}
+
+section.three > section.title + section.about{
+    float: left;
+    width: 40%;
+}
+
+section.three > section.title + section.about + section.about {
+    float: right;
+    width: 60%;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 30px;
+}
+
+section.three > section.title + section.about img {
+    width: 100%;
+    height: auto;
+}
+
+section.three section.about figure,
+section.three section.about p {
+    margin: 0;
+    text-align: center middle;
+}
+
+section.three > section.about p {
+    margin:2px;
+    text-align: center;
+}
+
+/*footer i have to add space between the lines */
+footer{
+    text-align:center;
+    padding:10px;
+    clear: both;
+}
+footer h4:last-child{
+    margin-top: 20px;
+}
