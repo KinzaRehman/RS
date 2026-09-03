@@ -9,6 +9,8 @@
 
 //console.log('works');
 
+//okay so each id is for something that i shoul dbe referncing like het if i click this then do that 
+
 const inputBox = document.querySelector("#input-box");
 const addButton = document.querySelector("#input-button");
 const resetButton = document.querySelector("#reset");
@@ -28,7 +30,7 @@ resetButton.addEventListener("click", function() {
     updateCounters();
 });
 
-
+//first create the function with all the logic and things that need to happen
 
 function addTask() {
     const taskText = inputBox.value.trim();
@@ -40,36 +42,29 @@ function addTask() {
     }
 
     errorMessage.textContent = "";
-
-    // Create the list item
+        //first create the the elemtns for each thing like lists, buttons, delete button, edit button, 
     const listItem = document.createElement("li");
 
-    // Create the checkbox
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
 
-    // Create the task text
     const taskName = document.createElement("span");
     taskName.textContent = taskText;
     taskName.contentEditable = "false";
 
-    // Create the Edit button
     const editButton = document.createElement("button");
     editButton.textContent = "Edit";
     editButton.type = "button";
 
-    // Create the Delete button
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
     deleteButton.type = "button";
 
-    // Check or uncheck the task
     checkbox.addEventListener("change", function() {
         taskName.classList.toggle("completed", checkbox.checked);
         updateCounters();
     });
 
-    // Start or finish editing
     editButton.addEventListener("click", function() {
         const isEditing = taskName.contentEditable === "true";
 
@@ -79,10 +74,10 @@ function addTask() {
             taskName.contentEditable = "true";
             taskName.focus();
             editButton.textContent = "Save";
+            updateCounters();
         }
     });
 
-    // Save the edited task
     function saveEditedTask() {
         const updatedTask = taskName.textContent.trim();
 
@@ -99,7 +94,6 @@ function addTask() {
         inputBox.focus();
     }
 
-    // Press Enter to save the edited task
     taskName.addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
             event.preventDefault();
@@ -107,31 +101,37 @@ function addTask() {
         }
     });
 
-    // Delete the task
     deleteButton.addEventListener("click", function() {
         listItem.remove();
-        updateCounters();
+        updatecounters();
     });
 
-    // Place everything inside the list item
+//within the list items i need these aligned
     listItem.appendChild(checkbox);
     listItem.appendChild(taskName);
     listItem.appendChild(editButton);
     listItem.appendChild(deleteButton);
 
-    // Place the list item inside the task list
     listContainer.appendChild(listItem);
 
-    // Clear and focus the Add Task input
     inputBox.value = "";
     inputBox.focus();
 
+    // Update the numbers after adding the task
+    updatecounters();
 }
 
 
+//if its checked then + 1 if not checked then also plus one then calcuate the compelte is taking the sum of all checked, and uncomplete is total - checked
+
 function updateCounters() {
     const totalTasks = listContainer.children.length;
+
     const completedTasks = listContainer.querySelectorAll("input[type='checkbox']:checked").length;
+
     const uncompletedTasks = totalTasks - completedTasks;
+
+    completedCounter.textContent = completedTasks;
+    uncompletedCounter.textContent = uncompletedTasks;
 }
 updateCounters();
