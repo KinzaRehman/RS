@@ -4,19 +4,23 @@
     <meta charset="utf-8">
     <meta name="description" content="My To-Do List App">
     <meta name="keywords" content="todo, list, tasks">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Coiny&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lilita+One&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Titan+One&display=swap" rel="stylesheet">
     <title>My To-Do List</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
     <header> 
-        <h1>A running to do list </h1>
+        <h1 class="coiny-regular">A running to do list </h1>
     </header>
 	<!--the person probably has to see whats done and whats left -->
 
     <section id="countingTasks">
         <section id="numberOfTasks">
-            <p>Completed: <span id="completed-counter">0</span></p>
-            <p>Uncompleted: <span id="uncompleted-counter">0</span></p>
+            <p>Completed: <span id="completed-counter"></span></p>
+            <p>Uncompleted: <span id="uncompleted-counter"></span></p>
         </section>
     </section>
 
@@ -25,12 +29,14 @@
         <form id="todo-form">
             <input type="text" id="input-box" placeholder="Add a new task">
             <button type="button" id="input-button">Add Item</button>
+			<button type="button" id="reset">Reset List</button>
+
         </form>
 
         <h2>Task List</h2>
         <ul id="list-container"></ul>
     </section>
 
-    <script src="script.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

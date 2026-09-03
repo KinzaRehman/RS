@@ -7,26 +7,102 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0; 
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', 'Nunito', 'Inter', sans-serif;
+}
+/* i need to get the coiny google font for buuble letters*/
+.coiny-regular {
+  font-family: "Coiny", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /*strawberry matcha */
 
 :root {
-  --pink: #7b5483;
-  --black: #111111;
-  --light-gray: #fffffccc;
-  --light-green: #e4f4ed;
-  --cream: rgb(252, 251, 244);
-  --darkestgreen: rgb(31, 39, 31); 
-  --darkestgreenOpaque: rgba(58, 73, 58, 0.781); 
+  font-size: 16px; 
+
+  --matcha: #8e9546;
+  --avocado-cream: #bbCA6f;
+  --wild-primrose: #e9e298;
+  --tuit-bush: #f2cfbb;
+  --steawberry-milk: #f2cfbb;
+  --camaron-pink: #f28892;
+  --cream: #ffe3b3;
+
+  --dark-text: #4a3f3f;
+  --light-text: #7a6f6f;
+  --white: #ffffff;
+  --shadow-light: rgba(0,0,0,0.1);
+  --shadow-medium: rgba(0,0,0,0.2);
+  --shadow-heavy: rgba(0,0,0,0.25);
+
 }
 
 /******************************************
 /* LAYOUT
 /*******************************************/
+body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.25rem; 
+
+   background: linear-gradient(135deg, 
+    var(--strawberry-milk) 0%, 
+    var(--cream) 30%,
+    var(--wild-primrose) 60%,
+    var(--avocado-cream) 100%
+  );
+
+}
+
+header {
+  width: 100%;
+  max-width: 37.5rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: var(--matcha);
+  letter-spacing: 0.05rem;
+  word-spacing: 0.1rem;
+
+}
+
+#countingTasks {
+  width: 100%;
+  max-width: 37.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+#numberOfTasks p {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 0.5rem;
+
+}
 
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+@media screen and (max-width: 768px) {
+  :root {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    font-size: 14px;
+  }
+  header h1 {
+    font-size: 2.25rem; /* 36px */
+  }
+}
