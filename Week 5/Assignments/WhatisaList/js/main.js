@@ -5,7 +5,6 @@
 //3 count tasks that have been complete based on check button?
 // if the person adds more stuff then it shoul dbe an add button 
 //the reset button makes the lsit go back to 0 items, like the mian landing page 
-//the person can save on local storrage their lsit items 
 //the tasks need to show up in the list 
 
 //console.log('works');
@@ -127,5 +126,12 @@ function addTask() {
     inputBox.value = "";
     inputBox.focus();
 
-    updateCounters();
 }
+
+
+function updateCounters() {
+    const totalTasks = listContainer.children.length;
+    const completedTasks = listContainer.querySelectorAll("input[type='checkbox']:checked").length;
+    const uncompletedTasks = totalTasks - completedTasks;
+}
+updateCounters();
