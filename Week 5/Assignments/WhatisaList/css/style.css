@@ -1,100 +1,351 @@
 /******************************************
-/* CSS
+/* BASIC RESET
 /*******************************************/
 
-/* Box Model Hack */
-*{
+* {
   box-sizing: border-box;
   margin: 0;
-  padding: 0; 
-  font-family: 'Poppins', 'Nunito', 'Inter', sans-serif;
+  padding: 0;
 }
-/* i need to get the coiny google font for buuble letters*/
-.coiny-regular {
-  font-family: "Coiny", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/*strawberry matcha */
 
 :root {
-  font-size: 16px; 
+  font-size: 16px;
 
-  --matcha: #8e9546;
-  --avocado-cream: #bbCA6f;
-  --wild-primrose: #e9e298;
-  --tuit-bush: #f2cfbb;
-  --steawberry-milk: #f2cfbb;
-  --camaron-pink: #f28892;
-  --cream: #ffe3b3;
+  /* Strawberry matcha colors */
+  --matcha-dark: #687238;
+  --matcha: #929a52;
+  --matcha-light: #cbd28c;
 
-  --dark-text: #4a3f3f;
-  --light-text: #7a6f6f;
+  --strawberry: #e97883;
+  --strawberry-dark: #c85562;
+  --strawberry-milk: #f7ced2;
+
+  --cream: #fff5dc;
   --white: #ffffff;
-  --shadow-light: rgba(0,0,0,0.1);
-  --shadow-medium: rgba(0,0,0,0.2);
-  --shadow-heavy: rgba(0,0,0,0.25);
+  --dark-text: #463d37;
+  --light-text: #766b64;
 
+  --shadow: rgba(70, 61, 55, 0.18);
 }
 
 /******************************************
-/* LAYOUT
+/* PAGE
 /*******************************************/
+
 body {
-  align-items: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 1.25rem; 
+  align-items: center;
 
-   background: linear-gradient(135deg, 
-    var(--strawberry-milk) 0%, 
-    var(--cream) 30%,
-    var(--wild-primrose) 60%,
-    var(--avocado-cream) 100%
+  font-family: "Nunito", "Inter", sans-serif;
+  color: var(--dark-text);
+
+  background: linear-gradient(
+    135deg,
+    var(--strawberry-milk),
+    var(--cream),
+    var(--matcha-light)
   );
-
 }
+
+/******************************************
+/* HEADER
+/*******************************************/
 
 header {
   width: 100%;
-  max-width: 37.5rem;
+  max-width: 40rem;
+  margin-bottom: 1.5rem;
   text-align: center;
-  margin-bottom: 1.25rem;
 }
 
 header h1 {
-  font-size: 2rem;
-  color: var(--matcha);
-  letter-spacing: 0.05rem;
-  word-spacing: 0.1rem;
-
+  color: var(--matcha-dark);
+  font-size: 3rem;
+  line-height: 1.2;
+  letter-spacing: 0.04rem;
 }
+
+.coiny-regular {
+  font-family: "Coiny", system-ui;
+  font-weight: 400;
+}
+
+/******************************************
+/* TASK COUNTERS
+/*******************************************/
 
 #countingTasks {
   width: 100%;
-  max-width: 37.5rem;
+  max-width: 40rem;
+  margin-bottom: 1rem;
+}
+
+#numberOfTasks {
+  padding: 1rem 1.25rem;
+
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1.25rem;
+  gap: 1rem;
+
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 2px solid var(--matcha-light);
+  border-radius: 1rem;
+  box-shadow: 0 0.4rem 1rem var(--shadow);
 }
 
 #numberOfTasks p {
+  font-weight: 800;
+}
+
+#completed-counter {
+  color: var(--matcha-dark);
+}
+
+#uncompleted-counter {
+  color: var(--strawberry-dark);
+}
+
+/******************************************
+/* TO-DO CONTAINER
+/*******************************************/
+
+#todo-container {
+  width: 100%;
+  max-width: 40rem;
+  padding: 1.5rem;
+
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 3px solid var(--strawberry-milk);
+  border-radius: 1.5rem;
+  box-shadow: 0 0.6rem 1.5rem var(--shadow);
+}
+
+#todo-container h2 {
+  margin: 1.5rem 0 1rem;
+  color: var(--matcha-dark);
+  font-family: "Coiny", system-ui;
+  font-size: 1.75rem;
+}
+
+/******************************************
+/* FORM
+/*******************************************/
+
+#todo-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+#input-box {
+  min-width: 0;
+  flex: 1 1 15rem;
+  padding: 0.85rem 1rem;
+
+  color: var(--dark-text);
+  background-color: var(--cream);
+  border: 2px solid var(--matcha);
+  border-radius: 0.75rem;
+
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+#input-box::placeholder {
+  color: var(--light-text);
+}
+
+#input-box:focus {
+  outline: 3px solid var(--strawberry-milk);
+  outline-offset: 2px;
+  border-color: var(--strawberry-dark);
+}
+
+/******************************************
+/* BUTTONS
+/*******************************************/
+
+button {
+  padding: 0.75rem 1rem;
+
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 800;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:focus-visible {
+  outline: 3px solid var(--dark-text);
+  outline-offset: 2px;
+}
+
+#input-button {
+  color: var(--white);
+  background-color: var(--matcha);
+}
+
+#input-button:hover {
+  background-color: var(--matcha-dark);
+}
+
+#reset {
+  color: var(--white);
+  background-color: var(--strawberry);
+}
+
+#reset:hover {
+  background-color: var(--strawberry-dark);
+}
+
+/******************************************
+/* ERROR MESSAGE
+/*******************************************/
+
+#error-message {
+  min-height: 1.5rem;
+  margin-top: 0.5rem;
+
+  color: var(--strawberry-dark);
+  font-weight: 800;
+}
+
+/******************************************
+/* TASK LIST
+/*******************************************/
+
+#list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  list-style: none;
+}
+
+#list-container li {
+  width: 100%;
+  padding: 0.85rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  background-color: var(--cream);
+  border-left: 0.4rem solid var(--matcha);
+  border-radius: 0.75rem;
+  box-shadow: 0 0.2rem 0.6rem var(--shadow);
+}
+
+#list-container input[type="checkbox"] {
+  width: 1.3rem;
+  height: 1.3rem;
+
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: var(--matcha-dark);
+}
+
+#list-container span {
+  min-width: 0;
+  flex: 1;
+
+  overflow-wrap: anywhere;
   font-size: 1rem;
   font-weight: 700;
-  color: var(--dark-text);
-  margin-bottom: 0.5rem;
-
-
 }
+
+/* Edit button */
+#list-container li button:first-of-type {
+  color: var(--dark-text);
+  background-color: var(--matcha-light);
+}
+
+/* Delete button */
+#list-container li button:last-of-type {
+  color: var(--white);
+  background-color: var(--strawberry);
+}
+
+#list-container li button:last-of-type:hover {
+  background-color: var(--strawberry-dark);
+}
+
+/******************************************
+/* COMPLETED AND EDITING TASKS
+/*******************************************/
 
 .completed {
-    color: gray;
-    text-decoration: line-through;
+  color: var(--light-text);
+  text-decoration: line-through;
+  opacity: 0.7;
 }
 
+#list-container span[contenteditable="true"] {
+  padding: 0.35rem 0.5rem;
 
+  background-color: var(--white);
+  border: 2px solid var(--strawberry);
+  border-radius: 0.4rem;
+  outline: none;
+}
+
+/******************************************
+/* SMALL SCREENS
+/*******************************************/
+
+@media screen and (max-width: 35rem) {
+  body {
+    padding: 1.25rem 0.75rem;
+  }
+
+  header h1 {
+    font-size: 2.25rem;
+  }
+
+  #numberOfTasks {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  #todo-container {
+    padding: 1rem;
+  }
+
+  #todo-form {
+    flex-direction: column;
+  }
+
+  #input-box,
+  #todo-form button {
+    width: 100%;
+  }
+
+  #list-container li {
+    flex-wrap: wrap;
+  }
+
+  #list-container span {
+    flex-basis: calc(100% - 2.5rem);
+  }
+
+  #list-container li button {
+    flex: 1;
+  }
+}
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/

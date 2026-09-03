@@ -27,11 +27,12 @@
    <!--they need to add stuf to the list-->
     <section id="todo-container">
         <form id="todo-form">
-            <input type="text" id="input-box" placeholder="Add a new task">
-            <button type="button" id="input-button">Add Item</button>
-			<button type="button" id="reset">Reset List</button>
+   			<input type="text" id="input-box" placeholder="Add a new task" autocomplete="off">
 
-        </form>
+    		<button type="submit" id="input-button">Add Item</button>
+    		<button type="button" id="reset">Reset List</button>
+		</form>
+		<p id="error-message" role="alert"></p>
 
         <h2>Task List</h2>
         <ul id="list-container"></ul>

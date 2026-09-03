@@ -8,56 +8,124 @@
 //the person can save on local storrage their lsit items 
 //the tasks need to show up in the list 
 
-console.log('works');
-
+//console.log('works');
 
 const inputBox = document.querySelector("#input-box");
 const addButton = document.querySelector("#input-button");
+const resetButton = document.querySelector("#reset");
 const listContainer = document.querySelector("#list-container");
+const completedCounter = document.querySelector("#completed-counter");
+const uncompletedCounter = document.querySelector("#uncompleted-counter");
+const todoForm = document.querySelector("#todo-form");
+const errorMessage = document.querySelector("#error-message");
+
+todoForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    addTask();
+});
+
+resetButton.addEventListener("click", function() {
+    listContainer.innerHTML = "";
+    updateCounters();
+});
 
 
-addButton.addEventListener("click", addTask);
 
 function addTask() {
     const taskText = inputBox.value.trim();
 
     if (taskText === "") {
-        alert("there needs to be a task or reminder added ");
+        errorMessage.textContent = "Please enter a task.";
+        inputBox.focus();
         return;
     }
-    //creating a list, then we need the check box, a delete button and edit button. 
+
+    errorMessage.textContent = "";
+
+    // Create the list item
     const listItem = document.createElement("li");
 
-    const checkbox = document.creatElemnt ("input");
+    // Create the checkbox
+    const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
 
+    // Create the task text
+    const taskName = document.createElement("span");
+    taskName.textContent = taskText;
+    taskName.contentEditable = "false";
+
+    // Create the Edit button
     const editButton = document.createElement("button");
     editButton.textContent = "Edit";
+    editButton.type = "button";
 
-    listItem.appendChild(checkbox);
-    listItem.appendChild(deleteButton);
-    listItem.appendChild(editButton);
-
-
-    checkbox.addEventListener("change", function() {
-        taskName.classList.toggle('completed', checkbox.checked);
-
-    });
-
-    listContainer.appendChild(listItem); 
-
+    // Create the Delete button
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
-    deleteButton.type = "button"; 
-    
-   
-    inputBox.value = ""; 
+    deleteButton.type = "button";
 
+    // Check or uncheck the task
+    checkbox.addEventListener("change", function() {
+        taskName.classList.toggle("completed", checkbox.checked);
+        updateCounters();
+    });
 
+    // Start or finish editing
+    editButton.addEventListener("click", function() {
+        const isEditing = taskName.contentEditable === "true";
+
+        if (isEditing) {
+            saveEditedTask();
+        } else {
+            taskName.contentEditable = "true";
+            taskName.focus();
+            editButton.textContent = "Save";
+        }
+    });
+
+    // Save the edited task
+    function saveEditedTask() {
+        const updatedTask = taskName.textContent.trim();
+
+        if (updatedTask === "") {
+            errorMessage.textContent = "A task cannot be empty.";
+            taskName.focus();
+            return;
+        }
+
+        taskName.textContent = updatedTask;
+        taskName.contentEditable = "false";
+        editButton.textContent = "Edit";
+        errorMessage.textContent = "";
+        inputBox.focus();
+    }
+
+    // Press Enter to save the edited task
+    taskName.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            saveEditedTask();
+        }
+    });
+
+    // Delete the task
+    deleteButton.addEventListener("click", function() {
+        listItem.remove();
+        updateCounters();
+    });
+
+    // Place everything inside the list item
+    listItem.appendChild(checkbox);
+    listItem.appendChild(taskName);
+    listItem.appendChild(editButton);
+    listItem.appendChild(deleteButton);
+
+    // Place the list item inside the task list
+    listContainer.appendChild(listItem);
+
+    // Clear and focus the Add Task input
+    inputBox.value = "";
+    inputBox.focus();
+
+    updateCounters();
 }
-
-
-
-
-
-
