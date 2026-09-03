@@ -25,10 +25,33 @@ function addTask() {
         alert("there needs to be a task or reminder added ");
         return;
     }
+    //creating a list, then we need the check box, a delete button and edit button. 
     const listItem = document.createElement("li");
-    listItem.textContent = taskText; 
+
+    const checkbox = document.creatElemnt ("input");
+    checkbox.type = "checkbox";
+
+    const editButton = document.createElement("button");
+    editButton.textContent = "Edit";
+
+    listItem.appendChild(checkbox);
+    listItem.appendChild(deleteButton);
+    listItem.appendChild(editButton);
+
+
+    checkbox.addEventListener("change", function() {
+        taskName.classList.toggle('completed', checkbox.checked);
+
+    });
+
     listContainer.appendChild(listItem); 
-    inputBox.value = "";
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.type = "button"; 
+    
+   
+    inputBox.value = ""; 
 
 
 }
