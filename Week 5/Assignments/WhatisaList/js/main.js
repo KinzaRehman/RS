@@ -133,5 +133,9 @@ function updateCounters() {
 
     completedCounter.textContent = completedTasks;
     uncompletedCounter.textContent = uncompletedTasks;
+
+    if (totalTasks > 0 && uncompletedCounter == totalTasks) {
+        alert("You're all caught up!")
+    }
 }
 updateCounters();
