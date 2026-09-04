@@ -5,12 +5,111 @@
 /* Box Model Hack */
 *{
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 /******************************************
 /* LAYOUT
 /*******************************************/
+body {
+  padding: 40px 20px;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
 
+h1 {
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+/* Black containers */
+#starting-balance,
+#moneybutton,
+.slot-machine {
+  width: min(100%, 600px);
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 10px;  
+}
+
+/* Inputs and buttons */
+input,
+button {
+  margin: 6px;
+  padding: 12px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+input {
+  width: min(100%, 320px);
+
+}
+
+button {
+  cursor: pointer;
+
+}
+
+
+/* Slot machine reels */
+.reels {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.reel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 120px;
+  border: 3px solid #070606;
+  border-radius: 5px;
+  font-size: 3rem;
+}
+
+#spin-button {
+  width: 150px;
+}
+
+#result {
+  min-height: 25px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.slot-machine {
+  border: 2px solid black;
+}
+
+
+
+/* Smaller screens */
+@media (max-width: 500px) {
+  #starting-balance,
+  #moneybutton,
+  .slot-machine {
+    padding: 18px;
+  }
+
+  .reel {
+    width: 75px;
+    height: 90px;
+    font-size: 2rem;
+  }
+
+  input,
+  button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
 
 /******************************************
 /* ADDITIONAL STYLES
