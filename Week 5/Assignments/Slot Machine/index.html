@@ -15,30 +15,25 @@
 	<!--the h1 is important-->
 	<h1>Slot Machine</h1>
 		<!-- theres a starting amount-->
-	<section id ="starting-balance">
-		<input type="number" id="input-box" placeholder="Insert your betting amount">
-		<button type="submit" id="input-button">Lets Bet!</button>
-	</section>
+	<section id ="starting-balance">$</section>
 
-		<!-- their starting ammount-->
-		 <!--how much money they need to -->
+	<!-- their starting ammount-->
+	 <!--how much money they need to -->
 	<section id="moneybutton"> 
 	<button type="submit" id="min">Minimum: $5</button>
 	<button type="submit" id="max">Max: $50</button>
-	<input type="number" id="custom-bet" placeholder="place your bet amount between the minimum and Maximum">
-	<button type="submit" id="custome-bet">My bet</button>
 	</section>
 
 
     <section class="slot-machine">
         <div class="reels">
-            <div class="reel" id="reel1"></div>
-            <div class="reel" id="reel2"></div>
-            <div class="reel" id="reel3"></div>
+            <div class="reel" id="reel1">🍓</div>
+            <div class="reel" id="reel2">🍉</div>
+            <div class="reel" id="reel3">🍎</div>
         </div>
-        <button id="spin-button">Spin</button>
         <div id="result"></div>
     </section>
+	<section id="output-message"></section>
 
 
 		<script type="text/javascript" src="js/main.js"></script>

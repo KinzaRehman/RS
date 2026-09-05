@@ -17,29 +17,46 @@ body {
   min-height: 100vh;
   font-family: Arial, sans-serif;
   text-align: center;
+  background-image:  linear-gradient(
+      rgba(230, 230, 230, 0.322)
+    ), url("../img/alexey_hulsov-chips-5009744.png");
+  background-repeat: repeat;
+  background-size: 150px 150px;
 }
 
-h1 {
+h1, #starting-balance, #moneybutton, .slot-machine, #output-message, .reel, button {
+  border: 2px solid goldenrod;
+}
+
+h1, #output-message{
+  margin: 0 auto 30px;
+  background-color: #070606;
+  color: gold;
   margin-bottom: 30px;
   font-size: 2.5rem;
+  border-color: 2px goldenrod;
+  border-radius: 5px;
+  width: min(100%, 600px);
+  text-align: center;
+
 }
 
 /* Black containers */
-#starting-balance,
-#moneybutton,
-.slot-machine {
+#starting-balance, #moneybutton, .slot-machine {
   width: min(100%, 600px);
   margin: 20px auto;
   padding: 25px;
   border-radius: 10px;  
+  background-color: #070606;
+  color: goldenrod;
+  font-size: 30px;
 }
 
 /* Inputs and buttons */
-input,
-button {
+input, button {
   margin: 6px;
   padding: 12px;
-  border: 2px solid #000000;
+  border: 2px solid goldenrod;
   border-radius: 5px;
   font-size: 1rem;
 }
@@ -51,9 +68,10 @@ input {
 
 button {
   cursor: pointer;
+  background-color: black;
+  color: goldenrod;
 
 }
-
 
 /* Slot machine reels */
 .reels {
@@ -69,7 +87,7 @@ button {
   justify-content: center;
   width: 100px;
   height: 120px;
-  border: 3px solid #070606;
+  border: 3px solid goldenrod;
   border-radius: 5px;
   font-size: 3rem;
 }
@@ -85,12 +103,12 @@ button {
 }
 
 .slot-machine {
-  border: 2px solid black;
+  border: 2px solid goldenrod;
 }
 
-
-
-/* Smaller screens */
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
 @media (max-width: 500px) {
   #starting-balance,
   #moneybutton,
@@ -111,6 +129,4 @@ button {
   }
 }
 
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
+
