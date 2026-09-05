@@ -4,7 +4,7 @@
 
 const minBet = 5;
 const maxBet = 15; 
-let balance = 500;
+let balance = 15;
 
 //I need the balance to load on laod rather than later on 
 document.querySelector('#starting-balance').innerText = balance; 
@@ -31,6 +31,7 @@ function slotmachine(bet) {
 
     if (bet > balance) { 
         outputMsg.innerText = "No balance"
+        alert("You're out of Money!")
     }
     else {
     balance -= bet;
