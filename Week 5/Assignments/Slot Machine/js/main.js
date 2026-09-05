@@ -48,7 +48,7 @@ function slotmachine(bet) {
             balance += winnings
             outputMsg.innerText = `You won $${winnings}`
         } 
-    /iftheyre not equal
+    //iftheyre not equal
         else {
             outputMsg.innerText = `You lost $${bet}`
         }
