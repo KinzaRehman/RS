@@ -34,28 +34,29 @@ function slotmachine(bet) {
     }
     else {
     balance -= bet;
-
+//for the nodelist stuff we take the 3 emojis and use the mathfloor and mathrandom to ranomzie the output and the length is like per thing
     let first = emojis[Math.floor(Math.random() * emojis.length)];
     let second = emojis[Math.floor(Math.random() * emojis.length)];
     let third = emojis[Math.floor(Math.random() * emojis.length)]; 
-
+//recalling the array 0 1 2 is like reel1, reel2, reel3
     myReels[0].innerText = first;
     myReels[1].innerText = second;
     myReels[2].innerText = third;
-    
+    //if theyre equal
         if (first === second && second === third) {
             let winnings = bet * 5;
             balance += winnings
             outputMsg.innerText = `You won $${winnings}`
         } 
-    
+    /iftheyre not equal
         else {
             outputMsg.innerText = `You lost $${bet}`
         }
+    //what is the balance
     document.querySelector('#starting-balance').innerText = balance; 
     }
 }
-// if the select the nig 
+// based on the buttons , this takes the input and then this is saying the big number = 50 and the small number is 5 
 bigNum.addEventListener('click', function () {
     slotmachine(50)
 })

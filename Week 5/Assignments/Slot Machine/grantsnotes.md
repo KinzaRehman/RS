@@ -20,13 +20,6 @@ is a function of your input (your bet) to an output (what you might win)
         win/ lost 
         The win is deicded if all vlaues match?
 
-
-
-
-
-
-
-
 Input (bet) 
     -Positive 
     -Between a mimmum and maximum 
