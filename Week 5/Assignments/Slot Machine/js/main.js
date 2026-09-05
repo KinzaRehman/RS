@@ -4,7 +4,7 @@
 
 const minBet = 5;
 const maxBet = 15; 
-let balance = 15;
+let balance = 500;
 
 //I need the balance to load on laod rather than later on 
 document.querySelector('#starting-balance').innerText = balance; 
