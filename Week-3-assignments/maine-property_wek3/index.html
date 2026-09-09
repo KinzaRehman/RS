@@ -63,28 +63,47 @@
 
             <section>
                 <h2>Request a Free Quote</h2>
-                    <form action = "#" method="GET">
-                            <label for="Your Name">Your name</label>
-                            <input type="text" id="Your Name">
+                <form id="quote-form">
+                <label for="customer-name">Your name</label>
+                <input
+                    type="text"
+                    id="customer-name"
+                    name="customerName"
+                    required
+                >
 
-                            <label for="Phone Number">Phone Number</label>
-                            <input type="tel" id="Phone Number">
+                <label for="phone-number">Phone number</label>
+                <input
+                    type="tel"
+                    id="phone-number"
+                    name="phoneNumber"
+                    required
+                >
 
-                            <label for="What do you need?">What do you need?</label>
-                            <select>
-                                <option>Mowing & yard care</option>
-                                <option>Snow Plowing and Sanding</option>
-                                <option> Gutter and odd jobs</option>
-                                <option>Clean ups</option>
-                                <option> the ol razzle dazzle</option>
-                            </select>            
+                <label for="service">What do you need?</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option value="Mowing and yard care">
+                    Mowing &amp; yard care
+                    </option>
+                    <option value="Snow plowing and sanding">
+                    Snow plowing and sanding
+                    </option>
+                    <option value="Gutters and odd jobs">
+                    Gutters and odd jobs
+                    </option>
+                    <option value="Cleanups">Cleanups</option>
+                </select>
 
+                <label for="about">Tell us about what you need</label>
+                <textarea
+                    id="about"
+                    name="about"
+                    required
+                ></textarea>
 
-                            <label for="about">Tell us about yourself</label>
-                            <textarea id="about"></textarea>
-
-                            <a href = "#">Request a Free Quote</a>
-                        </form>
+                <button type="submit">Request a Free Quote</button>
+                </form>
             </section>
         </section>
 
@@ -92,4 +111,6 @@
             <p> Licensed & insured &bull; Serving Portland, Sourth Portland, & Cape Elizabeth</p>
             <p4> (207) 555-0142</p4>
         </footer>
+    <script src="js/main.js"></script>
     </body>
+</html>

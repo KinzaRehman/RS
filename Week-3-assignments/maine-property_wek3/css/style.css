@@ -158,7 +158,19 @@ form {
     text-align: left;
     font-weight: bold;
 }
+form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background-color: rgb(88, 119, 88);
+  color: aliceblue;
+  font-weight: bold;
+  cursor: pointer;
+}
 
+form button:hover {
+  background-color: rgb(68, 99, 68);
+}
 label {
     display: block;
     text-align: left;
