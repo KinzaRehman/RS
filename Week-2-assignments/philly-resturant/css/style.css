@@ -1,50 +1,262 @@
-/* Box Model Hack */
-* {
-  box-sizing: border-box;
+/*philly ressturant:NYC - Georgia */
+
+/*
+Boston, Philly, Maine - Arial
+NYC - Georgia
+Maine Shack - 'Lilita One' & 'Nunito Sans'
+Philly Water Ice - Titan One & Nunito
+*/
+*{
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Clear fix hack */
-.clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
+body > header {
+    width: 100%;
+    border: 5px solid rgb(168, 59, 59); 
+    color: whitesmoke;
+    height: 100px;
+    background-color: rgb(168, 59, 59);
+    overflow: auto;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+}
+body > header > h1 +h3 {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: italic;
 }
 
-.clear {
-	clear: both;
+nav ul {
+    list-style:none;
+    margin: 0;
+    padding:0;
+    align-items: center;
 }
 
-/******************************************
-/* BASE STYLES
-/*******************************************/
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
 
-body {
+nav li:last-child{
+    margin-right: 0;
+}
+
+nav a{
+    color: rgb(236, 232, 232);
+    text-decoration: none;
+}
+
+body > header + section {
+    height: 25px;
+    background-color: green;
+    text-align: center;
+    color: whitesmoke;
+    border: 5px solid green;
+    font-weight: bold;
+}
+
+body > section , section img {
+    width: 100%;
+}
+
+body, .main {
+    text-align: center;
+    background-color: rgb(243, 235, 224);
+    display:flex;
+    flex-wrap: wrap;
 
 }
 
-/******************************************
-/* LAYOUT
-/*******************************************/
-header {
-
+.main > h2 {
+    width: 100%;
+    color: darkred;
+    font-size: 30px;
+    margin-bottom: 35px;
 }
+
+section.menu1, section.menu2 {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+
+section.menu1 h3, section.menu2 h3 {
+    color: green;
+    border-bottom: 2px darkred dashed ;
+}
+
+h3 + ul li {
+    text-align: left;
+    list-style: none;
+}
+
 
 footer {
-
+    width: 100%;
+    border: 3px solid rgb(80, 49, 49);
+    color: blanchedalmond;
+    height: 100px;
+    background-color: rgb(80, 49, 49);
+    overflow: auto;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
 }
+
 
 /******************************************
-/* ADDITIONAL STYLES
+/* TABLETS
 /*******************************************/
-@media screen and (max-width: 600px) {
-  color: pink;
-  
+
+@media screen and (max-width: 768px) {
+  body > header {
+    height: auto;
+    padding: 15px 20px;
+  }
+
+  body > header h1 {
+    font-size: 28px;
+  }
+
+  nav ul {
+    margin-top: 10px;
+  }
+
+  body > header + section {
+    height: auto;
+    padding: 8px 15px;
+    border: none;
+  }
+
+  .main {
+    padding: 30px 20px;
+  }
+
+  section.menu1,
+  section.menu2 {
+    width: 50%;
+    padding: 15px;
+  }
+
+  footer {
+    height: auto;
+    padding: 20px;
+  }
 }
 
-@media screen and (max-width: 968px) {
-  color: pink;
-  
+
+/******************************************
+/* PHONES
+/*******************************************/
+
+@media screen and (max-width: 600px) {
+  body > header {
+    height: auto;
+    padding: 15px;
+  }
+
+  body > header h1 {
+    font-size: 23px;
+    line-height: 1.2;
+  }
+
+  body > header > h1 + h3 {
+    font-size: 13px;
+    margin-top: 5px;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  nav li,
+  nav li:last-child {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  nav a {
+    display: block;
+    padding: 6px;
+  }
+
+  body > header + section {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  body > section img {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .main {
+    display: block;
+    padding: 30px 15px;
+  }
+
+  .main > h2 {
+    font-size: 27px;
+    margin-bottom: 20px;
+  }
+
+  section.menu1,
+  section.menu2 {
+    width: 100%;
+    padding: 15px 5px;
+  }
+
+  section.menu1 h3,
+  section.menu2 h3 {
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+
+  h3 + ul li {
+    padding: 5px 0;
+    text-align: center;
+  }
+
+  footer {
+    height: auto;
+    padding: 20px 15px;
+    font-size: 14px;
+  }
+}
+
+
+/******************************************
+/* VERY SMALL PHONES
+/*******************************************/
+
+@media screen and (max-width: 350px) {
+  body > header h1 {
+    font-size: 19px;
+  }
+
+  body > header > h1 + h3 {
+    font-size: 12px;
+  }
+
+  body > header + section {
+    font-size: 12px;
+  }
+
+  body > section img {
+    height: 190px;
+  }
+
+  .main > h2 {
+    font-size: 24px;
+  }
 }
