@@ -143,76 +143,137 @@
 // }
 
 // Select the HTML elements
-const dateInput = document.querySelector("#month");
-const submitButton = document.querySelector("#submit");
-const displaySeason = document.querySelector("#displaySeason");
-const monthSections = document.querySelectorAll("#months > section");
-
-// Connect each month number to its HTML section ID
-const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov","Dec"];
-
-// Hide all flower recommendations when the page first loads
-monthSections.forEach(function(section) {
-    section.style.display = "none";
+// Select the HTML elements
+const dateInput=document.querySelector("#month");
+const submitButton=document.querySelector("#submit");
+const displaySeason=document.querySelector("#displaySeason");
+dateInput.addEventListener("click", function () {
+  if (typeof dateInput.showPicker === "function") {
+    dateInput.showPicker();
+  }
 });
+const seasonSection=document.querySelector("#season");
+const monthSections=document.querySelectorAll("#months > section");
+const months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const suggestions={Jan:"Grow paperwhites indoors near a bright window. Rotate the pot so the stems stay upright.",Feb:"Pair roses with fragrant hyacinths or sweet peas for a softer February arrangement.",Mar:"Plant cool-season flowers after checking the final frost date for your part of New York.",Apr:"Keep delicate spring flowers away from heaters, direct sunlight, and ripening fruit.",May:"Combine lilacs and garden roses, then add snapdragons for height and movement.",Jun:"Hydrangeas need plenty of water. Refresh their water often and lightly mist their petals.",Jul:"Choose heat-loving zinnias, sunflowers, and cosmos for a colorful summer garden.",Aug:"Pair dahlias with celosia and asters for a full late-summer arrangement.",Sep:"Mix marigolds and chrysanthemums with the last dahlias of the season.",Oct:"Add berries, branches, or ornamental kale for texture and an autumn-inspired arrangement.",Nov:"Combine fresh flowers with eucalyptus and dried stems to help the arrangement last longer.",Dec:"Combine amaryllis or roses with evergreen, and keep potentially toxic plants away from pets."};
 
-// Listen for the button click
-submitButton.addEventListener("click", function() {
-    const selectedDate = dateInput.value;
+seasonSection.hidden=true;
+monthSections.forEach(section=>section.hidden=true);
 
-    // Check if the user selected a date
-    if (selectedDate === "") {
-        displaySeason.textContent = "Please select a date first!";
-        return;
-    }
+function determineSeason(month,day){
+  const value=month*100+day;
+  if(value>=320&&value<=620)return "spring";
+  if(value>=621&&value<=922)return "summer";
+  if(value>=923&&value<=1220)return "autumn";
+  return "winter";
+}
 
-    // The date looks like: YYYY-MM-DD
-    const dateParts = selectedDate.split("-");
+function showFlowers(){
+  document.querySelector("#selection .error")?.remove();
+  if(!dateInput.value){
+    const error=document.createElement("p");
+    error.className="error";
+    error.textContent="Please select a date first!";
+    document.querySelector("#selection").appendChild(error);
+    dateInput.focus();
+    return;
+  }
+  const [,monthNumber,dayNumber]=dateInput.value.split("-").map(Number);
+  const season=determineSeason(monthNumber,dayNumber);
+  document.body.classList.remove("spring","summer","autumn","winter");
+  document.body.classList.add(season);
+  seasonSection.hidden=false;
+  displaySeason.textContent=`${season[0].toUpperCase()+season.slice(1)}!`;
+  monthSections.forEach(section=>section.hidden=true);
+  const monthId=months[monthNumber-1];
+  const selected=document.getElementById(monthId);
+  selected.querySelector(".season-tip")?.remove();
+  const tip=document.createElement("aside");
+  tip.className="season-tip";
+  tip.innerHTML=`<strong>Seasonal suggestion</strong><span>${suggestions[monthId]}</span>`;
+  selected.appendChild(tip);
+  selected.hidden=false;
+  selected.scrollIntoView({behavior:"smooth",block:"start"});
+}
 
-    const monthNumber = Number(dateParts[1]);
-    const dayNumber = Number(dateParts[2]);
+submitButton.addEventListener("click",showFlowers);
 
-    // Combine the month and day for easier date-range comparisons
-    // March 20 becomes 320
-    // June 21 becomes 621
-    const monthAndDay = monthNumber * 100 + dayNumber;
+// Animated GIFs do not reliably animate as CSS cursors, so the GIF follows the pointer as an image.
+const fairyCursor=document.createElement("img");
+fairyCursor.id="fairy-cursor";
+fairyCursor.src="img/main_cursor.gif";
+fairyCursor.alt="";
+fairyCursor.setAttribute("aria-hidden","true");
+document.body.appendChild(fairyCursor);
 
-    let season;
-    // Determine the season using the exact date ranges
-    if (monthAndDay >= 320 && monthAndDay <= 620) {
-        season = "Spring";
-    } else if (monthAndDay >= 621 && monthAndDay <= 922) {
-        season = "Summer";
-    } else if (monthAndDay >= 923 && monthAndDay <= 1220) {
-        season = "Autumn";
-    } else {
-        // December 21 through March 19
-        season = "Winter";
-    }
-
-    // Display the correct season
-    displaySeason.textContent =
-        "The season for your selected date is " + season + "!";
-
-    // Hide every month's flower recommendations
-    monthSections.forEach(function(section) {
-        section.style.display = "none";
-    });
-
-    // Find the correct month ID
-    const selectedMonthId = months[monthNumber - 1];
-
-    // Find the matching HTML section
-    const selectedMonthSection =
-        document.querySelector("#" + selectedMonthId);
-
-    // Show that month's flower recommendations
-    selectedMonthSection.style.display = "block";
-
-    // Smoothly scroll to the recommendations
-    selectedMonthSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
+fairyCursor.addEventListener("load",()=>document.body.classList.add("cursor-ready"));
+fairyCursor.addEventListener("error",()=>{
+  document.body.classList.remove("cursor-ready");
+  fairyCursor.remove();
+  console.error("Could not load img/main_cursor.gif. Check the file name and folder.");
 });
+document.addEventListener("pointermove",event=>{
+  fairyCursor.style.left=`${event.clientX}px`;
+  fairyCursor.style.top=`${event.clientY}px`;
+});
+document.addEventListener("pointerover",event=>{
+  fairyCursor.classList.toggle("over-link",Boolean(event.target.closest("a,button,input,label")));
+});
+// ==========================================
+// MOTION TOGGLE
+// ==========================================
 
+const motionToggle = document.querySelector("#motion-toggle");
+const motionToggleText = motionToggle.querySelector(
+  ".motion-toggle-text"
+);
+
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+);
+
+// Apply or remove no-motion mode
+function setMotionPreference(motionIsOff) {
+  document.body.classList.toggle(
+    "motion-off",
+    motionIsOff
+  );
+
+  motionToggle.setAttribute(
+    "aria-pressed",
+    String(motionIsOff)
+  );
+
+  motionToggleText.textContent = motionIsOff
+    ? "Motion: Off"
+    : "Motion: On";
+
+  localStorage.setItem(
+    "flowers-motion-off",
+    String(motionIsOff)
+  );
+}
+
+// Check for a previously saved choice
+const savedMotionPreference = localStorage.getItem(
+  "flowers-motion-off"
+);
+
+// Use the saved choice, or follow the device preference
+if (savedMotionPreference !== null) {
+  setMotionPreference(
+    savedMotionPreference === "true"
+  );
+} else {
+  setMotionPreference(
+    prefersReducedMotion.matches
+  );
+}
+
+// Change the setting when the button is clicked
+motionToggle.addEventListener("click", function () {
+  const motionIsCurrentlyOff =
+    document.body.classList.contains("motion-off");
+
+  setMotionPreference(!motionIsCurrentlyOff);
+});

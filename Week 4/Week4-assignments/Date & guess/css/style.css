@@ -1,49 +1,286 @@
-/******************************************
-/* CSS
-/*******************************************/
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap");
+/* =========================================
+   MOTION TOGGLE
+========================================= */
 
-/* Box Model Hack */
-*{
-  box-sizing: border-box;
-  margin: 0;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  text-align: center;
+.motion-toggle {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 999999;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  min-height: 42px;
+  padding: 9px 14px;
+
+  color: var(--ink);
+  background: rgba(255, 250, 244, 0.92);
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 20px 10px 20px 10px;
+
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  box-shadow: 0 7px 18px rgba(84, 62, 71, 0.18);
+  backdrop-filter: blur(8px);
+
+  cursor: pointer;
 }
 
-:root {
-  --pink: rgb(238, 207, 238)
+.motion-toggle:hover {
+  background: var(--pink-light);
 }
 
-/******************************************
-/* LAYOUT
-/*******************************************/
-header {
-  background-color: var(pink);
+.motion-toggle span:first-child {
+  color: #6da77b;
 }
 
-Header p {
-  font-size: 32px;
-  font-weight: bold;
+/* Change indicator color when motion is off */
+
+body.motion-off .motion-toggle span:first-child {
+  color: #bd718a;
 }
 
-img {
-  height: 100px;
-  width: 100px;
+/* =========================================
+   NO-MOTION MODE
+========================================= */
+
+body.motion-off *,
+body.motion-off *::before,
+body.motion-off *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
 }
 
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
-.butterfly {
-    position: fixed;
-    top: 50px;
-    right: 50px;
-    width: 150px;
-    height: 150px;
-    z-index: -1;
+/* Hide animated Giphy background */
+
+body.motion-off .background-video {
+  display: none;
 }
 
-.butterfly iframe {
-    width: 100%;
-    height: 100%;
+/* Use a static pastel page background */
+
+body.motion-off {
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(253, 230, 238, 0.95),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(228, 244, 248, 0.95),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #fffaf4,
+      #fde6ee,
+      #e4f4f8
+    );
+
+  cursor: auto !important;
+}
+
+/* Remove animated seasonal GIFs */
+
+body.motion-off.spring #months,
+body.motion-off.summer #months,
+body.motion-off.autumn #months,
+body.motion-off.winter #months {
+  background-image: none !important;
+}
+
+/* Give each season a static pastel background */
+
+body.motion-off.spring #months {
+  background-color: var(--pink-light);
+}
+
+body.motion-off.summer #months {
+  background-color: var(--yellow);
+}
+
+body.motion-off.autumn #months {
+  background-color: var(--peach-light);
+}
+
+body.motion-off.winter #months {
+  background-color: var(--blue-light);
+}
+
+/* Hide animated butterfly cursor */
+
+body.motion-off #fairy-cursor {
+  display: none !important;
+}
+
+/* Restore the normal cursor */
+
+body.motion-off,
+body.motion-off a,
+body.motion-off button,
+body.motion-off input,
+body.motion-off label {
+  cursor: auto !important;
+}
+
+/* Mobile placement */
+
+@media (max-width: 600px) {
+  .motion-toggle {
+    top: 10px;
+    right: 10px;
+    padding: 8px 11px;
+  }
+}
+:root{--ink:#62565b;--muted:#7f7076;--cream:#fffaf4;--pink:#f5b7cc;--pink-soft:#fde7ef;--peach:#f8c89f;--peach-soft:#ffeadb;--blue:#afd4dc;--blue-soft:#e3f2f5;--mint:#bcd9c3;--mint-soft:#e6f2e8;--yellow:#f7dda0;--line:rgba(111,88,96,.18);--shadow:0 15px 34px rgba(103,79,88,.15)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{min-height:100vh;display:flex;flex-direction:column;margin:0;color:var(--ink);background:radial-gradient(circle at 12% 12%,rgba(245,183,204,.55),transparent 29%),radial-gradient(circle at 88% 18%,rgba(175,212,220,.55),transparent 30%),linear-gradient(135deg,#fff7f0,#fde8ec 50%,#e7f2f2);font-family:"DM Sans",Arial,sans-serif;cursor:auto}
+img{max-width:100%}
+
+/* Animated butterfly cursor. The normal cursor stays available until the GIF loads. */
+body.cursor-ready,body.cursor-ready a,body.cursor-ready button,body.cursor-ready input,body.cursor-ready label{cursor:none}
+#fairy-cursor{position:fixed;top:0;left:0;z-index:99999;display:none;width:46px;height:46px;object-fit:contain;pointer-events:none;transform:translate(-20%,-18%);filter:drop-shadow(0 3px 5px rgba(88,67,75,.28))}
+body.cursor-ready #fairy-cursor{display:block}
+#fairy-cursor.over-link{width:130px;height:130px}
+/* =========================================
+   BUTTERFLY FOREST BACKGROUND
+========================================= */
+.background-video {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+  background: #e8b9c9;
+  pointer-events: none;
+}
+
+.background-video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  /*
+   * The GIF's ratio is 480 ÷ 288 = 1.6667.
+   * These rules make it behave like background-size: cover.
+   */
+  width: 100vw;
+  height: 60vw;
+
+  min-width: 166.67vh;
+  min-height: 100vh;
+
+  border: none;
+  outline: none;
+
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.pink-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(247, 174, 204, 0.45);
+  pointer-events: none;
+}
+
+
+header{width:min(920px,calc(100% - 28px));margin:0 auto;padding:28px 0 12px;text-align:center}
+header p{position:relative;width:100%;margin:0;padding:18px 30px;color:var(--ink);background:linear-gradient(110deg,var(--pink-soft),var(--peach-soft),var(--blue-soft));border:2px solid rgba(255,255,255,.9);border-radius:34px 16px 38px 19px/18px 34px 20px 38px;font-family:"Playfair Display",Georgia,serif;font-size:clamp(2rem,5vw,3.7rem);font-style:italic;font-weight:600;line-height:1;box-shadow:var(--shadow);transform:rotate(-.35deg)}
+header p::before{content:"✿";position:absolute;top:-18px;left:18px;color:var(--pink);font-size:2.15rem;transform:rotate(-15deg)}
+header p::after{content:"✦";position:absolute;right:19px;bottom:-14px;color:#d4b54b;font-size:1.9rem}
+
+body>section{width:min(920px,calc(100% - 28px));margin:0 auto 34px;padding:clamp(22px,4vw,34px);background:rgba(255,250,244,.91);border:2px solid rgba(255,255,255,.9);border-radius:22px 40px 24px 36px/34px 20px 38px 22px;box-shadow:var(--shadow)}
+body>section>p:first-child{max-width:690px;margin:0 auto 20px;color:var(--muted);font-size:1.04rem;line-height:1.6;text-align:center}
+
+#selection{position:relative;width:100%;padding:23px;background:linear-gradient(120deg,var(--pink-soft),var(--peach-soft),var(--blue-soft));border:1px solid var(--line);border-radius:28px 16px 30px 18px/17px 29px 16px 31px;box-shadow:0 9px 22px rgba(103,79,88,.11)}
+#selection::after{content:"♡";position:absolute;top:7px;right:16px;color:#d98baa;font-size:1.45rem}
+#selection label{display:block;margin-bottom:9px;color:var(--ink);font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+#selection input,#selection button{min-height:50px;border:1px solid var(--line);font:inherit}
+#selection input{width:calc(58% - 6px);padding:0 15px;color:var(--ink);background:rgba(255,255,255,.94);border-radius:15px 8px 15px 9px;outline:none}
+#selection input:focus{border-color:#d98baa;box-shadow:0 0 0 3px rgba(217,139,170,.16)}
+#selection button{width:42%;padding:0 16px;color:var(--ink);background:linear-gradient(100deg,var(--pink),var(--peach),var(--yellow));border-radius:9px 18px 8px 17px;font-weight:700;transition:transform .2s ease,filter .2s ease}
+#selection button:hover{transform:translateY(-2px) rotate(.4deg);filter:brightness(1.035)}
+#selection .error{margin:12px 0 0;color:#a44f6d;font-weight:700;text-align:center}
+
+.season-result h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.season-result #displaySeason {
+  display: inline;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+/* Season-specific colors */
+body.spring #displaySeason {
+  color: #e75480;
+}
+
+body.summer #displaySeason {
+  color: #e58b00;
+}
+
+body.autumn #displaySeason {
+  color: #b55224;
+}
+
+body.winter #displaySeason {
+  color: #5271a3;
+}
+#season{width:100%;margin:26px auto 14px;padding:14px 20px;background:var(--blue-soft);border:1px solid var(--line);border-radius:18px 34px 16px 31px/27px 15px 30px 17px;text-align:center;box-shadow:0 8px 19px rgba(103,79,88,.1)}
+#season h2{margin:0;color:#a95f7b;font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.7rem,4vw,2.5rem);font-style:italic}
+#displaySeason{margin:4px 0 0;font-size:1.08rem;font-weight:700}
+
+/* The seasonal GIF lives on this outer panel. */
+#months{width:100%;padding:clamp(24px,4vw,40px);background-position:center;background-size:cover;background-repeat:no-repeat;border-radius:34px 18px 36px 20px/20px 36px 19px 34px;box-shadow:0 14px 32px rgba(83,64,71,.18)}
+body.spring #months{background-image:url("../img/spring_background.gif")}
+body.summer #months{background-image:url("../img/summer_background.gif")}
+body.autumn #months{background-image:url("../img/fall_background.gif")}
+body.winter #months{background-image:url("../img/Winter_background.gif")}
+#months>section{width:100%;margin:0;padding:0;background:transparent;border:0;animation:reveal .45s ease}
+#months h3{width:fit-content;max-width:94%;margin:0 auto 8px;padding:10px 22px;color:var(--ink);background:rgba(255,250,244,.91);border:1px solid rgba(255,255,255,.9);border-radius:24px 11px 25px 12px/12px 25px 11px 24px;font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.85rem,5vw,2.85rem);font-style:italic;line-height:1.1;text-align:center;box-shadow:0 7px 17px rgba(70,52,59,.14)}
+#months>section>p{width:fit-content;margin:0 auto 22px;padding:7px 16px;color:var(--muted);background:rgba(253,231,239,.92);border-radius:8px 15px 8px 15px;font-weight:700;text-align:center}
+
+.list{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin:0;padding:0;background:transparent;list-style:none}
+.list li{min-width:0;overflow:hidden;display:flex;flex-direction:column;padding:0 0 15px;color:var(--ink);background:rgba(255,250,244,.96);border:2px solid rgba(255,255,255,.9);border-radius:27px 12px 25px 13px/13px 26px 12px 27px;font-family:"Playfair Display",Georgia,serif;font-size:1.12rem;font-weight:600;text-align:center;box-shadow:0 9px 22px rgba(68,51,58,.2);transition:transform .2s ease,box-shadow .2s ease}
+.list li:nth-child(2n){background:rgba(253,231,239,.96);border-radius:12px 27px 14px 25px/25px 13px 27px 12px}
+.list li:nth-child(3n){background:rgba(227,242,245,.96);border-radius:25px 14px 28px 12px/14px 28px 13px 25px}
+.list li:hover{transform:translateY(-4px) rotate(.45deg);box-shadow:0 14px 28px rgba(68,51,58,.24)}
+.list img{display:block;width:100%;height:200px;margin-bottom:14px;object-fit:cover;border-radius:inherit;border-bottom-left-radius:7px;border-bottom-right-radius:7px}
+
+.season-tip{position:relative;margin:20px 0 0;padding:17px 20px 17px 55px;color:var(--ink);background:rgba(255,250,244,.95);border:2px solid rgba(255,255,255,.9);border-left:7px solid var(--pink);border-radius:14px 29px 13px 27px/25px 13px 27px 14px;box-shadow:0 9px 21px rgba(70,52,59,.15);line-height:1.6}
+.season-tip::before{content:"🦋";position:absolute;top:16px;left:17px;font-size:1.6rem}
+.season-tip strong{display:block;margin-bottom:4px;color:#a95f7b;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+
+footer{width:100%;min-height:68px;display:flex;align-items:center;justify-content:center;margin-top:auto;padding:20px;color:var(--ink);background:linear-gradient(90deg,var(--pink-soft),var(--peach-soft),var(--blue-soft));border-top:2px solid rgba(255,255,255,.8)}
+footer a{color:var(--ink);font-weight:700;text-underline-offset:4px}
+footer a:hover{color:#a95f7b}
+
+@keyframes reveal{from{opacity:0;transform:translateY(15px) scale(.985)}to{opacity:1;transform:none}}
+@media(max-width:750px){header,body>section{width:calc(100% - 18px)}#selection input,#selection button{width:100%}#selection button{margin-top:10px}.list{grid-template-columns:repeat(2,minmax(0,1fr))}#months{padding:22px 14px}}
+@media(max-width:480px){header p{padding:14px 18px;font-size:2rem}.list{grid-template-columns:1fr}.list img{height:230px}}
+@media(pointer:coarse){body.cursor-ready,body.cursor-ready a,body.cursor-ready button,body.cursor-ready input,body.cursor-ready label{cursor:auto}#fairy-cursor{display:none!important}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+#fairy-cursor {
+  pointer-events: none !important;
+  user-select: none;
 }

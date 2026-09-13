@@ -2,22 +2,39 @@
 <html lang="en">
 	<head>
     	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
     	<meta name="description" content="This is where your description goes">
     	<meta name="keywords" content="one, two, three">
 
-		<title>New Yorks Seasonal Flowers</title>
+		<title>New York's Seasonal Flowers</title>
 
 		<!-- external CSS link -->
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
+		<div class="background-video" aria-hidden="true">
+			<iframe
+				src="https://giphy.com/embed/qzIBpKegEc1Qn8pTQ3"
+				title="Animated butterfly forest background"
+				frameborder="0"
+				tabindex="-1">
+			</iframe>
+			</div>
+
+			<div class="pink-overlay" aria-hidden="true"></div>
+		
+		<button
+  type="button"
+  id="motion-toggle"
+  class="motion-toggle"
+  aria-pressed="false">
+  <span aria-hidden="true">◉</span>
+  <span class="motion-toggle-text">Motion: On</span>
+</button>
 		<header> 
-			<p> New Yorks Seasonal Flowers </p>
+			<p>New York's Seasonal Flowers</p>
 		</header> 
-		<div class="butterfly">
-			<iframe src="https://giphy.com/embed/ZdX2p6JB3PqTe" frameborder="0"></iframe>
-		</div>
 
 		<section> 
 			<p> Excited to give share some seasonal flower recommendations based on the month in New York! </p>
@@ -27,9 +44,8 @@
 			<button type="button" id="submit">Lets plant some flowers!</button> 
 			</section>
 
-			<section id=season>
-			<h2 id="season">The seasons is:</h2>
-			<p id="displaySeason"></p>
+			<section id="season" class="season-result" hidden>
+  				<h2>The season is: <span id="displaySeason"></span></h2>
 			</section>
 
 			<!-- lists for each seasons-->
@@ -204,7 +220,7 @@
 		</section>
 		<footer> 
 			<a href="https://tjflowersandevents.com/blogs/tj-flowers-blog/flowers-in-season-nyc-monthly-guide">Learn More</a>
-		<footer>
+		</footer>
 	
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
