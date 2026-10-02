@@ -2,15 +2,15 @@ document.querySelector('#clickMe').addEventListener('click', makeReq)
 
 function makeReq(){
 
-  const userinput = document.querySelector("#userName").value;
+  const userinput = document.querySelector("#coinFlip").value;
 
-  fetch(`/api?student=${userinput}`)
+  fetch(`/api?coinFlip=${userinput}`)
     .then(response => response.json())
     .then((data) => {
       console.log(data);
       document.querySelector("#clientResult").textContent = data.yourChoice
       document.querySelector("#computerResult").textContent = data.flipResult
-      document.querySelector("#winLose").textContent = data.currentOccupation
+      document.querySelector("#winLose").textContent = data.result
     });
 
 }
