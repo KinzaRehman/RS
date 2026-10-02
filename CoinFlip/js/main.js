@@ -2,15 +2,15 @@ document.querySelector('#clickMe').addEventListener('click', makeReq)
 
 function makeReq(){
 
-  const userName = document.querySelector("#userName").value;
+  const userinput = document.querySelector("#userName").value;
 
-  fetch(`/api?student=${userName}`)
+  fetch(`/api?student=${userinput}`)
     .then(response => response.json())
     .then((data) => {
       console.log(data);
-      document.querySelector("#personName").textContent = data.name
-      document.querySelector("#personStatus").textContent = data.status
-      document.querySelector("#personOccupation").textContent = data.currentOccupation
+      document.querySelector("#clientResult").textContent = data.yourChoice
+      document.querySelector("#computerResult").textContent = data.flipResult
+      document.querySelector("#winLose").textContent = data.currentOccupation
     });
 
 }
