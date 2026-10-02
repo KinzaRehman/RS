@@ -5,7 +5,10 @@ const http = require('http')
 const fs = require('fs')
 const url = require('url')
 const querystring = require('querystring')
-const figlet = require('figlet')
+
+
+const flipCoin = ['Heads', 'Tails'];
+
 
 const server = http.createServer(function(req, res) {
   const page = url.parse(req.url).pathname;
@@ -19,7 +22,7 @@ const server = http.createServer(function(req, res) {
     });
   }
   else if (page == '/api') {
-    
+
   }
 
 server.listen(8000);
